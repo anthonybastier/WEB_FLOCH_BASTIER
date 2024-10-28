@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <head>Test accueil</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Accueil</title>
+    </head>
     <body>
-    <p><?php echo "Bonjour"; ?></p>
+        <h1>TEST</h1>
+        <p><?php echo "Bonjour"; ?></p>
     </body>
 </html>
