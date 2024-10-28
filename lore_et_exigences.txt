@@ -1,0 +1,33 @@
+exigences : 
+
+Objets récupérables  classe ObjetRecuperable (exemple pistolet, billet d'avion)
+Objets bloqués classe ObjetBloqueParObjet (exemple coffre)
+Objet code classe ObjetCode (code sur un morceau de papier)
+Objet bloqué par code classe ObjetBloqueParCode (exemple boîte cadenassée)
+
+Minimum 6 objets
+
+Tous héritent de la classe abstraite Objet
+
+Interface WEB : inventaire en bas, en haut carte de type OpenLayers
+
+Gérer le @click
+
+Lore de l'escape game :
+Eviter de mourir sous différentes situations
+
+Le joueur commence devant une carte, on lui dit seulement que le jeu cherche à le tuer, à lui de sélectionner où il préfère aller. On pourra lui indiquer pour le départ qu'il peut sélectionner l'une de ces 3 options, étape 1 :
+	- Un billet d'avion pour se cacher. Si click,  Indice : Se rendre à Kuala Lumpur
+	- Un pistolet pour se protéger. Si click, Indice : dans la main de la liberté américaine
+Étape 2 :
+	- Si click sur Kuala Lumpur avec le billet, le joueur meurt dans l'accident de la Malaysia Airline.
+	- Si click sur statue de la liberté avec le pistolet, nouvel indice : Vie éternelle dans les pyramides (gizah)
+Étape 3 :
+	- Si click sur les pyramides de Gizah, coffre de la vie éternelle apparait avec indice : rdv sur la grande vague
+	- Si click sur la pyramide du Louvre (va crever), boite cadenas avec un code, indice gravé : rdv à NYC
+Étape 4 :
+	- Si click sur Nouvelle-Zélande (zoom large), un mouton te demande le code de la vie. Indice : 
+	- Si click sur le Japon, vague créée par Fukushima t'emporte et le joueur meurt.
+	- Si click sur une tour à NYC, le joueur meurt dans l'accident des tours jumelles du 11/9
+Étape 5 : 
+	- Si click sur 
