@@ -1,0 +1,32 @@
+CREATE TABLE Point (
+id integer GENERATED ALWAYS AS IDENTITY,
+geom geometry(Point,4326)
+);
+
+CREATE TABLE Icone (
+url VARCHAR(255),
+taille NUMERIC[],
+position NUMERIC[]
+);
+
+CREATE TABLE Objet (
+id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+nom VARCHAR(255),
+point Point,
+icone Icone,
+minZoomVisible INTEGER,
+depart BOOLEAN
+);
+
+CREATE TABLE ObjetRecuperable () INHERITS (Objet);
+
+CREATE TABLE ObjetCode (
+code INTEGER
+) INHERITS (Objet);
+
+CREATE TABLE ObjetBloqueParObjet (
+indice VARCHAR(255),
+idBloque INTEGER REFERENCES Objet(id)
+) INHERITS (Objet);
+
+CREATE TABLE ObjetBloqueParCode () INHERITS (ObjetBloqueParObjet);

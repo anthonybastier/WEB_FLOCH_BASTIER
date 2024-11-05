@@ -21,11 +21,26 @@ map.on('click', onMapClick);
 
 Vue.createApp({
     data() {
-
+        return {
+            list_obj:[],
+        };
     },
+    created() {
+        this.charger_obj();
+      },
     methods: {
-        fonction() {
-
+        charger_obj(id = null){
+            this.list_obj=[];
+            url = '/api/objets';
+            if (id) {
+                url += `?id_objet=${encodeURIComponent(id)}`
+            }
+            fetch(url)
+              .then(result => result.json())
+              .then(result => {
+                this.list_obj = result
+                console.log(result)
+            })
         }
     },
   }).mount('#app');

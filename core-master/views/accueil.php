@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-
+    
     <head>
         <meta charset="UTF-8">
         <title>Accueil</title>
@@ -12,6 +12,12 @@
     <body>
         <h1>TEST</h1>
         <div id="map"></div>
+        <h1>Liste des objets</h1>
+        <div id="app">
+        <ul>
+            <li v-for="objet in list_obj" :key="objet.id">{{objet.nom}}
+        </ul>
+        </div>
         <footer id="inventaire"></footer>
         <script src="assets/jeu.js"></script>
     </body>
