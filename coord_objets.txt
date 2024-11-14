@@ -1,0 +1,12 @@
+Coordonnées Leaflet des points à ajouter à la BDD :
+3.122519, 101.549377 billet d'avion
+40.689193, -74.044547 statue de la liberté
+48.860991, 2.33585 pyramide Louvre
+29.979172, 31.134224 pyramide Khéops
+37.421366, 141.032406 centrale nucléaire Fukushima
+51.389283, 30.098677 centrale nucléaire de Pripiat (Tchernobyl)
+40.711573, -74.013165 Tours jumelles à NYC
+-8.24823, 117.996597 Volcan Tambora
+40.820983, 14.42625 Vésuve à Pompéi
+55.103418, 17.385864 épave du Wilheim Gustloff
+41.883876, -49.768066 épave Titanic
