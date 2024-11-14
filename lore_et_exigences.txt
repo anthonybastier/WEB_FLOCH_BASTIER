@@ -16,18 +16,33 @@ Gérer le @click
 Lore de l'escape game :
 Eviter de mourir sous différentes situations
 
-Le joueur commence devant une carte, on lui dit seulement que le jeu cherche à le tuer, à lui de sélectionner où il préfère aller. On pourra lui indiquer pour le départ qu'il peut sélectionner l'une de ces 3 options, étape 1 :
+Le joueur commence devant une carte, on lui dit seulement que le jeu cherche à le tuer, à lui de sélectionner où il préfère aller. On pourra lui indiquer pour le départ qu'il peut sélectionner l'une de ces 3 options, 
+
+étape 1 :
 	- Un billet d'avion pour se cacher. Si click,  Indice : Se rendre à Kuala Lumpur
 	- Un pistolet pour se protéger. Si click, Indice : dans la main de la liberté américaine
+	- Un mouchoir pour chialer. Si click, Indice : il est écrit sur le mouchoir de se rendre à l'endroit le plus radioactif de la planète
+
+
 Étape 2 :
-	- Si click sur Kuala Lumpur avec le billet, le joueur meurt dans l'accident de la Malaysia Airline.
-	- Si click sur statue de la liberté avec le pistolet, nouvel indice : Vie éternelle dans les pyramides (gizah)
+	- Si click sur Kuala Lumpur avec le billet, le joueur meurt dans l'accident de la Malaysia Airline. 
+	- Si click sur statue de la liberté avec le pistolet, nouvel indice : Vie éternelle dans l'épave du naufrage le plus meurtrier
+	- Si click proche de Fukushima, la vague de 2011 emporte le joueur qui meurt. (Succès : bu la tasse)
+	- Si click autour de Tchernobyl, message "heureusement que tu as pensé à ta combi protectrice" et le joueur trouve une boîte à ouvrir avec un pass magnétique, Indice gravé : Pass dans le lieu de la pire éruption volcanique ever
+
+
 Étape 3 :
-	- Si click sur les pyramides de Gizah, coffre de la vie éternelle apparait avec indice : rdv sur la grande vague
-	- Si click sur la pyramide du Louvre (va crever), boite cadenas avec un code, indice gravé : rdv à NYC
+	- Si click sur le paquebot Wilheim Gustloff, le joueur plonge et trouve dans l'épave le coffre de la vie éternelle fermé par un cadenas à code. Indice gravé : Code à trouver au centre de la pyramide
+	- Si click sur Titanic le joueur plonge dans l'épave et y trouve dans la salle du commandant de bord l'indice gravé : rdv en haut d'une tour de NYC
+	- Si click sur volcan Tambora (Indonésie), le joueur trouve le pass magnétique 
+	- Si click sur le Vésuve à Pompéi (Naples), le joueur meurt carbonisé, s'étant trop approché de l'éruption, une statue de lui restera sur place tho :) (Succès : Pline l'ancien) 
+
 Étape 4 :
-	- Si click sur Nouvelle-Zélande (zoom large), un mouton te demande le code de la vie. Indice : 
-	- Si click sur le Japon, vague créée par Fukushima t'emporte et le joueur meurt.
-	- Si click sur une tour à NYC, le joueur meurt dans l'accident des tours jumelles du 11/9
+	- Si click sur la boîte de Tchernobyl avec le pass, c'est gagné ! 
+	- Si click sur une tour à NYC, le joueur meurt dans l'accident des tours jumelles du 11/9 (Succès : 9/11)
+ 	- Si click sur la pyramide du Louvre, le joueur meurt en se prenant une tortue tombée du ciel (Succès : Eschyle le Grec)
+	- Si click sur la pyramide de Khéops, le joueur perd 5min sur son temps pour obtenir le code : 0000 ^^^^
+
+
 Étape 5 : 
-	- Si click sur 
+	- Si click à nouveau sur le paquebot, inscription du code "0000", victoire ? Mais que de temps perdu...
