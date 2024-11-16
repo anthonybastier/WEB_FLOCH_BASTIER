@@ -11,6 +11,10 @@ Flight::route('/accueil', function() {
     Flight::render('accueil');
 });
 
+Flight::route('/jeu', function() {
+  Flight::render('jeu');
+});
+
 // Connexion à la BDD
 $link = pg_connect("host=localhost port=5432 dbname=escape_game user=postgres password=postgres");
 
@@ -42,6 +46,7 @@ Flight::route('/api/objets', function(){
   }
   Flight::json($tab_obj);
 });
+
 
 Flight::start();
 ?>
