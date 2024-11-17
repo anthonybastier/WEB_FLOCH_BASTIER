@@ -1,5 +1,6 @@
 let map = Vue.createApp({});
 
+/* Composant de la carte */
 map.component('my-component', {
     template: '<div id="map"></div>',
     mounted() {
@@ -14,6 +15,7 @@ map.component('my-component', {
             }).addTo(map);
             var depart = L.marker([-25.804837, 133.813477]).addTo(map);
             var popup = L.popup();
+            /* fonction à retirer avant de rendre */
             function onMapClick(e) {
                 popup
                 .setLatLng(e.latlng)
@@ -25,7 +27,7 @@ map.component('my-component', {
     },
 });
 
-map.mount('#map');        
+map.mount('#appmap');        
 
 
 
