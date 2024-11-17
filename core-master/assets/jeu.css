@@ -1,2 +1,7 @@
 #map { height: 600px;
-    width: 100%; }
+    width: 100%; 
+    grid-row: 1}
+
+#inventaire { height: 100px;
+    width: 100%;
+    grid-row: 2 }
