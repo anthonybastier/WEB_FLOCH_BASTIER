@@ -12,7 +12,7 @@
 
     <body>
         <h1>Escape Death</h1>
-        <div id="map">
+        <div id="appmap">
             <my-component></my-component>
         </div>
         <footer id="inventaire">
