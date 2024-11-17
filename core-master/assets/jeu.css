@@ -1,7 +1,16 @@
-#map { height: 600px;
+html, body { height: 100%;
     width: 100%; 
-    grid-row: 1}
+    margin: 0}
 
-#inventaire { height: 100px;
-    width: 100%;
-    grid-row: 2 }
+h1 { height: 8%;
+    width: 100%; 
+    margin: 0}
+
+#appmap { height: 76%;
+    width: 100%; }
+
+#map { height: 100%;
+    width: 100%; }
+
+#inventaire { height: 16%;
+    width: 100%;}
