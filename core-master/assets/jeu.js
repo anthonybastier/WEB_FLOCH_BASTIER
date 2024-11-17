@@ -1,22 +1,32 @@
-var map = L.map('map').setView([-25.804837, 133.813477], 4);
+let map = Vue.createApp({});
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+map.component('my-component', {
+    template: '<div id="map"></div>',
+    mounted() {
+        this.initMap();
+    },
+    methods: {
+        initMap() {
+            var map = L.map('map').setView([-25.804837, 133.813477], 4);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+            var depart = L.marker([-25.804837, 133.813477]).addTo(map);
+            var popup = L.popup();
+            function onMapClick(e) {
+                popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString())
+                .openOn(map);
+            }
+            map.on('click', onMapClick);
+        }
+    },
+});
 
-var depart = L.marker([-25.804837, 133.813477]).addTo(map);
+map.mount('#map');        
 
-var popup = L.popup();
-
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
-}
-
-map.on('click', onMapClick);
 
 
 Vue.createApp({
@@ -43,4 +53,4 @@ Vue.createApp({
             })
         }
     },
-  }).mount('#app');
+  }).mount('#inventaire');
