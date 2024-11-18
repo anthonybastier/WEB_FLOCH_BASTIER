@@ -2,7 +2,7 @@
   "data": [
     {
       "id": 1,
-      "nom": "Billet d'avion",
+      "nom": "Airport",
       "point": {
         "geom": {
           "type": "Point",
