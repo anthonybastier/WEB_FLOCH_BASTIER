@@ -4,7 +4,9 @@ let map = Vue.createApp({});
 map.component('my-component', {
     template: '<div id="map"></div>',
     mounted() {
-        this.initMap();
+        this.$nextTick(() => {
+            this.initMap();
+        });
     },
     methods: {
         initMap() {
