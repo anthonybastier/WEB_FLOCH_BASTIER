@@ -9,6 +9,11 @@
 
     <body>
         <h1>Hall of fame</h1>
+        <div id="Menu">
+            <ul>
+                <li><a href="/jeu">Jouer à Escape Death</a></li>
+            </ul>
+        </div>
         
         <script src="assets/jeu.js"></script>
     </body>
