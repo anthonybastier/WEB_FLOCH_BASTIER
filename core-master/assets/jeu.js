@@ -1,3 +1,10 @@
+// Définition des icônes des objets
+const epave = L.icon({
+    iconUrl: "sprite/shipwreck.png",
+    iconSize: [32, 32],
+});
+
+
 let map = Vue.createApp({});
 
 /* Composant de la carte */
