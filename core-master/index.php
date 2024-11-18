@@ -16,9 +16,6 @@ Flight::route('/jeu', function() {
   Flight::render('jeu');
 });
 
-Flight::route('/accueil', function () {
-  Flight::render('accueil');
-});
 
 // Connexion à la BDD
 $link = pg_connect("host=localhost port=5432 dbname=escape_game user=postgres password=postgres");
