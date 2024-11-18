@@ -1,0 +1,147 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "nom": "Billet d'avion",
+      "point": {
+        "geom": {
+          "type": "Point",
+          "coordinates": [3.122519, 101.549377]
+        }
+      },
+      "icone": null,
+      "minZoomVisible": 7,
+      "depart": false
+    },
+    {
+      "id": 2,
+      "nom": "Statue de la Liberté",
+      "point": {
+        "geom": {
+          "type": "Point",
+          "coordinates": [40.689193, -74.044547]
+        }
+      },
+      "icone": null,
+      "minZoomVisible": 12,
+      "depart": false
+    },
+    {
+      "id": 3,
+      "nom": "Pyramide Louvre",
+      "point": {
+        "geom": {
+          "type": "Point",
+          "coordinates": [48.860991, 2.33585]
+        }
+      },
+      "icone": null,
+      "minZoomVisible": 14,
+      "depart": false
+    },
+    {
+      "id": 4,
+      "nom": "Pyramide Khéops",
+      "point": {
+        "geom": {
+          "type": "Point",
+          "coordinates": [29.979172, 31.134224]
+        }
+      },
+      "icone": null,
+      "minZoomVisible": 7,
+      "depart": false
+    },
+    {
+      "id": 5,
+      "nom": "Centrale nucléaire Fukushima",
+      "point": {
+        "geom": {
+          "type": "Point",
+          "coordinates": [37.421366, 141.032406]
+        }
+      },
+      "icone": null,
+      "minZoomVisible": 7,
+      "depart": false
+    },
+    {
+      "id": 6,
+      "nom": "Centrale nucléaire de Pripiat (Tchernobyl)",
+      "point": {
+        "geom": {
+          "type": "Point",
+          "coordinates": [51.389283, 30.098677]
+        }
+      },
+      "icone": null,
+      "minZoomVisible": 6,
+      "depart": false
+    },
+    {
+      "id": 7,
+      "nom": "Tours jumelles à NYC",
+      "point": {
+        "geom": {
+          "type": "Point",
+          "coordinates": [40.711573, -74.013165]
+        }
+      },
+      "icone": null,
+      "minZoomVisible": 12,
+      "depart": false
+    },
+    {
+      "id": 8,
+      "nom": "Volcan Tambora",
+      "point": {
+        "geom": {
+          "type": "Point",
+          "coordinates": [-8.24823, 117.996597]
+        }
+      },
+      "icone": null,
+      "minZoomVisible": 5,
+      "depart": false
+    },
+    {
+      "id": 9,
+      "nom": "Vésuve à Pompéi",
+      "point": {
+        "geom": {
+          "type": "Point",
+          "coordinates": [40.820983, 14.42625]
+        }
+      },
+      "icone": null,
+      "minZoomVisible": 7,
+      "depart": false
+    },
+    {
+      "id": 10,
+      "nom": "Épave du Wilhelm Gustloff",
+      "point": {
+        "geom": {
+          "type": "Point",
+          "coordinates": [55.103418, 17.385864]
+        }
+      },
+      "icone": null,
+      "minZoomVisible": 6,
+      "depart": false
+    },
+    {
+      "id": 11,
+      "nom": "Épave Titanic",
+      "point": {
+        "geom": {
+          "type": "Point",
+          "coordinates": [41.883876, -49.768066]
+        }
+      },
+      "icone": null,
+      "minZoomVisible": 6,
+      "depart": false
+    }
+  ]
+}
