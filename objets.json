@@ -9,7 +9,7 @@
           "coordinates": [3.122519, 101.549377]
         }
       },
-      "icone": null,
+      "icone": "assets/sprite/airport.png",
       "minZoomVisible": 7,
       "depart": false
     },
@@ -22,7 +22,7 @@
           "coordinates": [40.689193, -74.044547]
         }
       },
-      "icone": null,
+      "icone": "assets/sprite/liberty_statue.png",
       "minZoomVisible": 12,
       "depart": false
     },
@@ -35,7 +35,7 @@
           "coordinates": [48.860991, 2.33585]
         }
       },
-      "icone": null,
+      "icone": "assets/sprite/louvre_pyramide.png",
       "minZoomVisible": 14,
       "depart": false
     },
@@ -48,7 +48,7 @@
           "coordinates": [29.979172, 31.134224]
         }
       },
-      "icone": null,
+      "icone": "assets/sprite/pyramid.png",
       "minZoomVisible": 7,
       "depart": false
     },
@@ -61,7 +61,7 @@
           "coordinates": [37.421366, 141.032406]
         }
       },
-      "icone": null,
+      "icone": "assets/sprite/Fukushima.png",
       "minZoomVisible": 7,
       "depart": false
     },
@@ -74,7 +74,7 @@
           "coordinates": [51.389283, 30.098677]
         }
       },
-      "icone": null,
+      "icone": "assets/sprite/tchernobyl.png",
       "minZoomVisible": 6,
       "depart": false
     },
@@ -87,7 +87,7 @@
           "coordinates": [40.711573, -74.013165]
         }
       },
-      "icone": null,
+      "icone": "assets/sprite/twin_towers.png",
       "minZoomVisible": 12,
       "depart": false
     },
@@ -100,7 +100,7 @@
           "coordinates": [-8.24823, 117.996597]
         }
       },
-      "icone": null,
+      "icone": "assets/sprite/Tambora.png",
       "minZoomVisible": 5,
       "depart": false
     },
@@ -113,7 +113,7 @@
           "coordinates": [40.820983, 14.42625]
         }
       },
-      "icone": null,
+      "icone": "assets/sprite/vesuve.png",
       "minZoomVisible": 7,
       "depart": false
     },
@@ -126,7 +126,7 @@
           "coordinates": [55.103418, 17.385864]
         }
       },
-      "icone": null,
+      "icone": "assets/sprite/shipwreck.png",
       "minZoomVisible": 6,
       "depart": false
     },
@@ -139,7 +139,7 @@
           "coordinates": [41.883876, -49.768066]
         }
       },
-      "icone": null,
+      "icone": "assets/sprite/shipwreck.png",
       "minZoomVisible": 6,
       "depart": false
     }
