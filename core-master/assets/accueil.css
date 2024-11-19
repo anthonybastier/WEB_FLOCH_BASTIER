@@ -1,0 +1,15 @@
+header {grid-column: 1 / span fr;   
+    }
+
+table {border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    }
+
+th {border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+    }
+
+th {background-color: #c89b2175;
+    }

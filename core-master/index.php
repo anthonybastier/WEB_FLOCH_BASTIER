@@ -16,15 +16,33 @@ Flight::route('/jeu', function() {
   Flight::render('jeu');
 });
 
+// Routes liées à l'identification pour entrer et sortir du jeu //
 
-// Connexion à la BDD
+Flight::route('GET /accueil', function() {
+  if (isset($_GET['pseudo']) and !empty($_GET['pseudo']));
+  Flight::render('pseudo', ['user'=> null]);
+});
+
+Flight::route('POST /accueil', function() {
+  if (isset($_POST['pseudo']) and !empty($_POST['log']));
+  $_SESSION['pseudo']= $_POST['pseudo'];
+  Flight::render('pseudo', ['user'=> $_POST]);
+});
+
+Flight::route('GET /accueil', function() {
+  $_SESSION = [];
+  Flight::render('accueil');
+});
+
+
+// Connexion à la BDD //
 $link = pg_connect("host=localhost port=5432 dbname=escape_game user=postgres password=postgres");
 
 if (!$link) {
   die('Erreur de connexion : ' . pg_last_error());
 }
 
-// stocker une variable globale
+// Stocker une variable globale //
 Flight::set('db', $link);
 
 Flight::route('/api/objets', function(){
