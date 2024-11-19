@@ -4,7 +4,7 @@ nom VARCHAR(255),
 point geometry(Point,4326),
 description VARCHAR(255),
 url_icone VARCHAR(255),
-taille_icone NUMERIC[],
+taille_icone NUMERIC[], 
 minZoomVisible INTEGER,
 depart BOOLEAN
 );
@@ -24,7 +24,7 @@ CREATE TABLE ObjetBloqueParCode () INHERITS (ObjetBloqueParObjet);
 
 INSERT INTO Objet (nom, point, description, url_icone, taille_icone, minZoomVisible, depart)
 VALUES 
-    ('Airport', ST_SetSRID(ST_Point(3.122519, 101.549377), 4326), 'à commenter', 'assets/sprite/airport.png', ARRAY[32, 32], 7, FALSE),
+    ('Aéroport', ST_SetSRID(ST_Point(3.122519, 101.549377), 4326), 'à commenter', 'assets/sprite/airport.png', ARRAY[32, 32], 7, FALSE),
     ('Statue de la Liberté', ST_SetSRID(ST_Point(-74.044547, 40.689193), 4326), 'à commenter', 'assets/sprite/liberty_statue.png', ARRAY[32, 32], 12, FALSE),
     ('Pyramide Louvre', ST_SetSRID(ST_Point(2.33585, 48.860991), 4326), 'à commenter', 'assets/sprite/louvre_pyramide.png', ARRAY[32, 32], 14, FALSE),
     ('Pyramide Khéops', ST_SetSRID(ST_Point(31.134224, 29.979172), 4326), 'à commenter', 'assets/sprite/pyramid.png', ARRAY[32, 32], 7, FALSE),

@@ -1,0 +1,11 @@
+1,Aéroport,0101000020E6100000E71BD13DEBFA08402D0B26FE28635940,à commenter,assets/sprite/airport.png,"{32,32}",7,f
+2,Statue de la Liberté,0101000020E6100000A208A9DBD98252C0EAD0E97937584440,à commenter,assets/sprite/liberty_statue.png,"{32,32}",12,f
+3,Pyramide Louvre,0101000020E61000008FE4F21FD2AF02403E93FDF3346E4840,à commenter,assets/sprite/louvre_pyramide.png,"{32,32}",14,f
+4,Pyramide Khéops,0101000020E61000009B560A815C223F40AE282504ABFA3D40,à commenter,assets/sprite/pyramid.png,"{32,32}",7,f
+5,Centrale nucléaire Fukushima,0101000020E610000037C64E7809A16140BBD23252EFB54240,à commenter,assets/sprite/Fukushima.png,"{32,32}",7,f
+6,Centrale nucléaire de Pripiat (Tchernobyl),0101000020E61000000DDE57E542193E40C3F17C06D4B14940,à commenter,assets/sprite/tchernobyl.png,"{32,32}",6,f
+7,Tours jumelles à NYC,0101000020E6100000EB1C03B2D78052C0BADBF5D2145B4440,à commenter,assets/sprite/twin_towers.png,"{32,32}",12,f
+8,Volcan Tambora,0101000020E6100000AB92C83EC87F5D40ACC5A700187F20C0,à commenter,assets/sprite/Tambora.png,"{32,32}",5,f
+9,Vésuve à Pompéi,0101000020E61000000AD7A3703DDA2C4036C98FF815694440,à commenter,assets/sprite/vesuve.png,"{32,32}",7,f
+10,Épave du Wilhelm Gustloff,0101000020E610000029B4ACFBC7623140ABE80FCD3C8D4B40,à commenter,assets/sprite/shipwreck.png,"{32,32}",6,f
+11,Épave Titanic,0101000020E6100000B39597FC4FE248C012DC48D922F14440,à commenter,assets/sprite/shipwreck.png,"{32,32}",6,f
