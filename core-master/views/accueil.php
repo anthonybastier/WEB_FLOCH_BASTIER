@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <title>Escape Death</title>
         <link rel="stylesheet" href="assets/jeu.css">
+        <link rel="icon" href="assets/sprite/death.ico">
     </head>
 
     <body>
