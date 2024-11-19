@@ -7,7 +7,6 @@
       "description": "à commenter",
       "url_icone": "assets/sprite/airport.png",
       "taille_icone": [32, 32],
-      "position": [16, 16],
       "minZoomVisible": 7,
       "depart": true
     },
@@ -18,7 +17,6 @@
       "description": "à commenter",
       "url_icone": "assets/sprite/liberty_statue.png",
       "taille_icone": [32, 32],
-      "position": [16, 16],
       "minZoomVisible": 12,
       "depart": false
     },
@@ -29,7 +27,6 @@
       "description": "à commenter",
       "url_icone": "assets/sprite/louvre_pyramide.png",
       "taille_icone": [32, 32],
-      "position": [16, 16],
       "minZoomVisible": 14,
       "depart": false
     },
@@ -40,7 +37,6 @@
       "description": "à commenter",
       "url_icone": "assets/sprite/pyramid.png",
       "taille_icone": [32, 32],
-      "position": [16, 16],
       "minZoomVisible": 7,
       "depart": false
     },
@@ -51,7 +47,6 @@
       "description": "à commenter",
       "url_icone": "assets/sprite/Fukushima.png",
       "taille_icone": [32, 32],
-      "position": [16, 16],
       "minZoomVisible": 7,
       "depart": false
     },
@@ -62,7 +57,6 @@
       "description": "à commenter",
       "url_icone": "assets/sprite/tchernobyl.png",
       "taille_icone": [32, 32],
-      "position": [16, 16],
       "minZoomVisible": 6,
       "depart": false
     },
@@ -73,7 +67,6 @@
       "description": "à commenter",
       "url_icone": "assets/sprite/twin_towers.png",
       "taille_icone": [32, 32],
-      "position": [16, 16],
       "minZoomVisible": 12,
       "depart": false
     },
@@ -84,7 +77,6 @@
       "description": "à commenter",
       "url_icone": "assets/sprite/Tambora.png",
       "taille_icone": [32, 32],
-      "position": [16, 16],
       "minZoomVisible": 5,
       "depart": false
     },
@@ -95,7 +87,6 @@
       "description": "à commenter",
       "url_icone": "assets/sprite/vesuve.png",
       "taille_icone": [32, 32],
-      "position": [16, 16],
       "minZoomVisible": 7,
       "depart": false
     },
@@ -106,7 +97,6 @@
       "description": "à commenter",
       "url_icone": "assets/sprite/shipwreck.png",
       "taille_icone": [32, 32],
-      "position": [16, 16],
       "minZoomVisible": 6,
       "depart": false
     },
@@ -117,7 +107,6 @@
       "description": "à commenter",
       "url_icone": "assets/sprite/shipwreck.png",
       "taille_icone": [32, 32],
-      "position": [16, 16],
       "minZoomVisible": 6,
       "depart": false
     }

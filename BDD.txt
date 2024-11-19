@@ -1,19 +1,10 @@
-CREATE TABLE Point (
-id integer GENERATED ALWAYS AS IDENTITY,
-geom geometry(Point,4326)
-);
-
-CREATE TABLE Icone (
-url VARCHAR(255),
-taille NUMERIC[],
-position NUMERIC[]
-);
-
 CREATE TABLE Objet (
 id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 nom VARCHAR(255),
-point Point,
-icone Icone,
+point geometry(Point,4326),
+description VARCHAR(255),
+url_icone VARCHAR(255),
+taille_icone NUMERIC[],
 minZoomVisible INTEGER,
 depart BOOLEAN
 );
@@ -30,3 +21,17 @@ idBloque INTEGER REFERENCES Objet(id)
 ) INHERITS (Objet);
 
 CREATE TABLE ObjetBloqueParCode () INHERITS (ObjetBloqueParObjet);
+
+INSERT INTO Objet (nom, point, description, url_icone, taille_icone, minZoomVisible, depart)
+VALUES 
+    ('Airport', ST_SetSRID(ST_Point(3.122519, 101.549377), 4326), 'à commenter', 'assets/sprite/airport.png', ARRAY[32, 32], 7, FALSE),
+    ('Statue de la Liberté', ST_SetSRID(ST_Point(-74.044547, 40.689193), 4326), 'à commenter', 'assets/sprite/liberty_statue.png', ARRAY[32, 32], 12, FALSE),
+    ('Pyramide Louvre', ST_SetSRID(ST_Point(2.33585, 48.860991), 4326), 'à commenter', 'assets/sprite/louvre_pyramide.png', ARRAY[32, 32], 14, FALSE),
+    ('Pyramide Khéops', ST_SetSRID(ST_Point(31.134224, 29.979172), 4326), 'à commenter', 'assets/sprite/pyramid.png', ARRAY[32, 32], 7, FALSE),
+    ('Centrale nucléaire Fukushima', ST_SetSRID(ST_Point(141.032406, 37.421366), 4326), 'à commenter', 'assets/sprite/Fukushima.png', ARRAY[32, 32], 7, FALSE),
+    ('Centrale nucléaire de Pripiat (Tchernobyl)', ST_SetSRID(ST_Point(30.098677, 51.389283), 4326), 'à commenter', 'assets/sprite/tchernobyl.png', ARRAY[32, 32], 6, FALSE),
+    ('Tours jumelles à NYC', ST_SetSRID(ST_Point(-74.013165, 40.711573), 4326), 'à commenter', 'assets/sprite/twin_towers.png', ARRAY[32, 32], 12, FALSE),
+    ('Volcan Tambora', ST_SetSRID(ST_Point(117.996597, -8.24823), 4326), 'à commenter', 'assets/sprite/Tambora.png', ARRAY[32, 32], 5, FALSE),
+    ('Vésuve à Pompéi', ST_SetSRID(ST_Point(14.42625, 40.820983), 4326), 'à commenter', 'assets/sprite/vesuve.png', ARRAY[32, 32], 7, FALSE),
+    ('Épave du Wilhelm Gustloff', ST_SetSRID(ST_Point(17.385864, 55.103418), 4326), 'à commenter', 'assets/sprite/shipwreck.png', ARRAY[32, 32], 6, FALSE),
+    ('Épave Titanic', ST_SetSRID(ST_Point(-49.768066, 41.883876), 4326), 'à commenter', 'assets/sprite/shipwreck.png', ARRAY[32, 32], 6, FALSE);
