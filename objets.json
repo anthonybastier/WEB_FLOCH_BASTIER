@@ -2,144 +2,122 @@
   "data": [
     {
       "id": 1,
-      "nom": "Airport",
-      "point": {
-        "geom": {
-          "type": "Point",
-          "coordinates": [3.122519, 101.549377]
-        }
-      },
-      "icone": "assets/sprite/airport.png",
+      "nom": "Aéroport",
+      "point": "POINT(3.122519 101.549377)",
+      "description": "à commenter",
+      "url_icone": "assets/sprite/airport.png",
+      "taille_icone": [32, 32],
+      "position": [16, 16],
       "minZoomVisible": 7,
-      "depart": false
+      "depart": true
     },
     {
       "id": 2,
       "nom": "Statue de la Liberté",
-      "point": {
-        "geom": {
-          "type": "Point",
-          "coordinates": [40.689193, -74.044547]
-        }
-      },
-      "icone": "assets/sprite/liberty_statue.png",
+      "point": "POINT(-74.044547 40.689193)",
+      "description": "à commenter",
+      "url_icone": "assets/sprite/liberty_statue.png",
+      "taille_icone": [32, 32],
+      "position": [16, 16],
       "minZoomVisible": 12,
       "depart": false
     },
     {
       "id": 3,
       "nom": "Pyramide Louvre",
-      "point": {
-        "geom": {
-          "type": "Point",
-          "coordinates": [48.860991, 2.33585]
-        }
-      },
-      "icone": "assets/sprite/louvre_pyramide.png",
+      "point": "POINT(2.33585 48.860991)",
+      "description": "à commenter",
+      "url_icone": "assets/sprite/louvre_pyramide.png",
+      "taille_icone": [32, 32],
+      "position": [16, 16],
       "minZoomVisible": 14,
       "depart": false
     },
     {
       "id": 4,
       "nom": "Pyramide Khéops",
-      "point": {
-        "geom": {
-          "type": "Point",
-          "coordinates": [29.979172, 31.134224]
-        }
-      },
-      "icone": "assets/sprite/pyramid.png",
+      "point": "POINT(31.134224 29.979172)",
+      "description": "à commenter",
+      "url_icone": "assets/sprite/pyramid.png",
+      "taille_icone": [32, 32],
+      "position": [16, 16],
       "minZoomVisible": 7,
       "depart": false
     },
     {
       "id": 5,
       "nom": "Centrale nucléaire Fukushima",
-      "point": {
-        "geom": {
-          "type": "Point",
-          "coordinates": [37.421366, 141.032406]
-        }
-      },
-      "icone": "assets/sprite/Fukushima.png",
+      "point": "POINT(141.032406 37.421366)",
+      "description": "à commenter",
+      "url_icone": "assets/sprite/Fukushima.png",
+      "taille_icone": [32, 32],
+      "position": [16, 16],
       "minZoomVisible": 7,
       "depart": false
     },
     {
       "id": 6,
       "nom": "Centrale nucléaire de Pripiat (Tchernobyl)",
-      "point": {
-        "geom": {
-          "type": "Point",
-          "coordinates": [51.389283, 30.098677]
-        }
-      },
-      "icone": "assets/sprite/tchernobyl.png",
+      "point": "POINT(30.098677 51.389283)",
+      "description": "à commenter",
+      "url_icone": "assets/sprite/tchernobyl.png",
+      "taille_icone": [32, 32],
+      "position": [16, 16],
       "minZoomVisible": 6,
       "depart": false
     },
     {
       "id": 7,
       "nom": "Tours jumelles à NYC",
-      "point": {
-        "geom": {
-          "type": "Point",
-          "coordinates": [40.711573, -74.013165]
-        }
-      },
-      "icone": "assets/sprite/twin_towers.png",
+      "point": "POINT(-74.013165 40.711573)",
+      "description": "à commenter",
+      "url_icone": "assets/sprite/twin_towers.png",
+      "taille_icone": [32, 32],
+      "position": [16, 16],
       "minZoomVisible": 12,
       "depart": false
     },
     {
       "id": 8,
       "nom": "Volcan Tambora",
-      "point": {
-        "geom": {
-          "type": "Point",
-          "coordinates": [-8.24823, 117.996597]
-        }
-      },
-      "icone": "assets/sprite/Tambora.png",
+      "point": "POINT(117.996597 -8.24823)",
+      "description": "à commenter",
+      "url_icone": "assets/sprite/Tambora.png",
+      "taille_icone": [32, 32],
+      "position": [16, 16],
       "minZoomVisible": 5,
       "depart": false
     },
     {
       "id": 9,
       "nom": "Vésuve à Pompéi",
-      "point": {
-        "geom": {
-          "type": "Point",
-          "coordinates": [40.820983, 14.42625]
-        }
-      },
-      "icone": "assets/sprite/vesuve.png",
+      "point": "POINT(14.42625 40.820983)",
+      "description": "à commenter",
+      "url_icone": "assets/sprite/vesuve.png",
+      "taille_icone": [32, 32],
+      "position": [16, 16],
       "minZoomVisible": 7,
       "depart": false
     },
     {
       "id": 10,
       "nom": "Épave du Wilhelm Gustloff",
-      "point": {
-        "geom": {
-          "type": "Point",
-          "coordinates": [55.103418, 17.385864]
-        }
-      },
-      "icone": "assets/sprite/shipwreck.png",
+      "point": "POINT(17.385864 55.103418)",
+      "description": "à commenter",
+      "url_icone": "assets/sprite/shipwreck.png",
+      "taille_icone": [32, 32],
+      "position": [16, 16],
       "minZoomVisible": 6,
       "depart": false
     },
     {
       "id": 11,
       "nom": "Épave Titanic",
-      "point": {
-        "geom": {
-          "type": "Point",
-          "coordinates": [41.883876, -49.768066]
-        }
-      },
-      "icone": "assets/sprite/shipwreck.png",
+      "point": "POINT(-49.768066 41.883876)",
+      "description": "à commenter",
+      "url_icone": "assets/sprite/shipwreck.png",
+      "taille_icone": [32, 32],
+      "position": [16, 16],
       "minZoomVisible": 6,
       "depart": false
     }
