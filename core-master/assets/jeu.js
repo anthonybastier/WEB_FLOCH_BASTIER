@@ -71,6 +71,10 @@ Vue.createApp({
                     this.inventaire.push(objet); 
                     marqueur.removeFrom(this.carte);
                 });
+
+                marqueur.on('mouseover',() => {
+                    marqueur.openPopup();
+                  });
                 
             };
         },
