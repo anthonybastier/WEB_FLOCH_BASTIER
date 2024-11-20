@@ -36,7 +36,7 @@ Vue.createApp({
         // Méthode pour initialiser la carte
         initMap() {
             // Création de la carte avec un centre initial et un zoom
-            this.carte = L.map('map').setView([-25.804837, 133.813477], 4);
+            this.carte = L.map('map').setView([-25.804837, 133.813477], 6);
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -44,6 +44,8 @@ Vue.createApp({
 
             // Ajouter un marqueur de départ
             L.marker([-25.804837, 133.813477]).addTo(this.carte);
+
+            this.carte.on('zoomend', this.updateMarkersVisibility);
         },
 
         ajoutMarqueurs() {
@@ -56,26 +58,25 @@ Vue.createApp({
                     iconSize: [taille_icone[0],taille_icone[1]],
                     iconAnchor: [objet.x, objet.y],
                 });
-                console.log(objet.url_icone);
 
                 const marqueur = L.marker([objet.x, objet.y], { icon });
 
                 marqueur.bindPopup(`<strong>${objet.nom}</strong><br>${objet.description}`);
-                this.marqueurs.push({m : marqueur, zoom : objet.minZoomVisible});
+                this.marqueurs.push({m : marqueur, zoom : objet.minzoomvisible});
 
                 marqueur.addTo(this.carte);
             };
-        }/*,
+        },
 
         updateMarkersVisibility() {
             const zoomLevel = this.carte.getZoom();
-            this.marqueurs.forEach(({ marqueur, zoom }) => {
+            this.marqueurs.forEach(({ m, zoom }) => {
                 if (zoom <= zoomLevel) {
-                    marqueur.addTo(this.carte);
+                    m.addTo(this.carte);
                 } else {
-                    marqueur.removeFrom(this.carte); 
+                    m.removeFrom(this.carte); 
                 }
         })
-    }*/
+    }
     }
 }).mount('#appmap');
