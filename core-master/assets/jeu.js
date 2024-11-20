@@ -50,7 +50,7 @@ Vue.createApp({
         },
 
         ajoutMarqueurs() {
-            for (objet of this.tab_obj) { 
+            for (let objet of this.tab_obj) { 
                 // Configuration de la taille de l'icône dans un format lisible par Javascript
                 taille_icone = objet.taille_icone.match(/[\w.-]+/g).map(Number);
 
@@ -67,12 +67,11 @@ Vue.createApp({
 
                 marqueur.addTo(this.carte);
 
-                
                 marqueur.on('click', () => {
                     this.inventaire.push(objet); 
                     marqueur.removeFrom(this.carte);
                 });
-        
+                
             };
         },
 
