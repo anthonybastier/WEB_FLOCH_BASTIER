@@ -4,36 +4,44 @@
     <head>
         <meta charset="UTF-8">
         <title>Escape Death</title>
-        <link rel="stylesheet" href="assets/jeu.css">
+        <link rel="stylesheet" href="assets/accueil.css">
         <link rel="icon" href="assets/sprite/death.ico">
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>    
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>    
     </head>
 
 
     <body>
         <header> 
-            <h1>Hall of fame</h1>
+            <h1>Escape Death</h1>
+            <h2>Hall of fame</h2>
         </header>
         <div id="hall_of_fame">
             <table id="hall_of_fame">
-                <tr>
-                    <th>Nom</th>
-                    <th>Score</th>
-                    <th>Date</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Score</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{pseudo}}</td>
+                        <td>{{score}}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
         <div id="login">
-            <form action="">
+            <form action="" @submit.prevent>
 
                 <p>Entrez votre pseudo ({{nbrCaracRestants}} caractères max) :</p>
 
-                <textarea v-if='limite' v-model="pseudo" style='color: black'></textarea>
-                <textarea v-else='limite' v-model="pseudo" style='color: red'></textarea>
+                <textarea v-bind:style="{ color: nbrCaracRestants >= 0 ? 'black' : 'red' }" v-model="pseudo">Pseudo</textarea>
 
-                <button v-if='limite' type="submit" name="envoi" enabled><a href="/jeu">Jouer à Escape Death</a></button>
-                <button v-else='limite' type="submit" name="envoi" disabled><a href="/jeu">Jouer à Escape Death</a></button>
+                <button @click="testpseudo">Jouer à Escape Death</button>
 
             </form>
         </div>
