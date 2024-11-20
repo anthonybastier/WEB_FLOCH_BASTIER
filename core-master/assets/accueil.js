@@ -1,15 +1,24 @@
-document.getElementById('score').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const $pseudo = document.getElementById('pseudo').value;
-    const $score = document.getElementById('score').value;
-
-    // Ajouter le score au backend
-    await fetch(`${apiUrl}/add-score`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ pseudo, $score })
-    });
-
-    // Enregistrer le nom du joueur dans sessionStorage
-    sessionStorage.setItem('pseudo', $pseudo);
-});
+Vue.createApp({
+    data() {
+      return {
+        pseudo: '',
+        max: 12,
+      };
+    },
+    methods: {
+        identification() {
+            return(this.liste.push(this.pseudo));}
+        },
+    computed: {
+        nbrCaracRestants() {
+            return (this.max - this.pseudo.length);
+            },
+        limite() {
+            if (this.nbrCaracRestants >= 0) {
+                return true;
+            }else{
+                return false;
+            };
+        },
+    },
+  }).mount('#login');
