@@ -9,3 +9,6 @@
 10,Épave du Wilhelm Gustloff,0101000020E610000029B4ACFBC7623140ABE80FCD3C8D4B40,à commenter,assets/sprite/shipwreck.png,"{32,32}",6,f
 11,Épave Titanic,0101000020E6100000B39597FC4FE248C012DC48D922F14440,à commenter,assets/sprite/shipwreck.png,"{32,32}",6,f
 1,Aéroport,0101000020E6100000E71BD13DEBFA08402D0B26FE28635940,à commenter,assets/sprite/airport.png,"{32,32}",7,t
+12,Pistolet,0101000020E61000005A9C31CC09CE39C08BE1EA0008BA6040,à commenter,assets/sprite/gun.png,"{32,32}",6,t
+13,Billet d_avion,0101000020E610000021E868554BCE39C08BE1EA0008BA6040,à commenter,assets/sprite/plane_ticket.png,"{32,32}",6,t
+14,Mouchoir,0101000020E6100000E833A0DE8CCE39C08BE1EA0008BA6040,à commenter,assets/sprite/tissue.png,"{32,32}",6,t
