@@ -2,6 +2,7 @@ Vue.createApp({
     data() {
         return {
             tab_obj: [],
+            inventaire: [],
             carte: 0, 
             marqueurs: [],
         };
@@ -58,13 +59,20 @@ Vue.createApp({
                     iconSize: [taille_icone[0],taille_icone[1]],
                     iconAnchor: [objet.x, objet.y],
                 });
-
+                
                 const marqueur = L.marker([objet.x, objet.y], { icon });
 
                 marqueur.bindPopup(`<strong>${objet.nom}</strong><br>${objet.description}`);
                 this.marqueurs.push({m : marqueur, zoom : objet.minzoomvisible});
 
                 marqueur.addTo(this.carte);
+
+                
+                marqueur.on('click', () => {
+                    this.inventaire.push(objet); 
+                    marqueur.removeFrom(this.carte);
+                });
+        
             };
         },
 

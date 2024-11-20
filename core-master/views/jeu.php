@@ -18,7 +18,10 @@
             <footer id="inventaire">
                 <h3>Inventaire</h3>
                 <ul>
-                    <li v-for="objet in inventaire" :key="objet.id">{{ objet.nom }}</li>
+                    <li v-for="objet in inventaire" :key="objet.id">
+                        <img :src="objet.url_icone" :alt="objet.nom" style="width: 50px; height: auto;" />
+                        <span> {{ objet.nom }}</span>
+                    </li>
                 </ul>
             </footer>
         </div>
