@@ -34,4 +34,7 @@ VALUES
     ('Volcan Tambora', ST_SetSRID(ST_Point(117.996597, -8.24823), 4326), 'à commenter', 'assets/sprite/Tambora.png', ARRAY[32, 32], 5, FALSE),
     ('Vésuve à Pompéi', ST_SetSRID(ST_Point(14.42625, 40.820983), 4326), 'à commenter', 'assets/sprite/vesuve.png', ARRAY[32, 32], 7, FALSE),
     ('Épave du Wilhelm Gustloff', ST_SetSRID(ST_Point(17.385864, 55.103418), 4326), 'à commenter', 'assets/sprite/shipwreck.png', ARRAY[32, 32], 6, FALSE),
-    ('Épave Titanic', ST_SetSRID(ST_Point(-49.768066, 41.883876), 4326), 'à commenter', 'assets/sprite/shipwreck.png', ARRAY[32, 32], 6, FALSE);
+    ('Épave Titanic', ST_SetSRID(ST_Point(-49.768066, 41.883876), 4326), 'à commenter', 'assets/sprite/shipwreck.png', ARRAY[32, 32], 6, FALSE),
+('Pistolet', ST_SetSRID(ST_Point(-25.804837, 133.813477), 4326), 'à commenter', 'assets/sprite/gun.png', ARRAY[32,32], 6, TRUE),
+('Billet d_avion', ST_SetSRID(ST_Point(-25.805837, 133.813477), 4326), 'à commenter', 'assets/sprite/plane_ticket.png', ARRAY[32,32], 6, TRUE),
+('Mouchoir', ST_SetSRID(ST_Point(-25.806837, 133.813477), 4326), 'à commenter', 'assets/sprite/tissue.png', ARRAY[32,32], 6, TRUE)
