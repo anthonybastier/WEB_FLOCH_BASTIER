@@ -18,7 +18,7 @@
             <footer id="inventaire">
                 <h3>Inventaire</h3>
                 <ul>
-                    <li v-for="objet in tab_obj" :key="objet.id">{{ objet.nom }}</li>
+                    <li v-for="objet in inventaire" :key="objet.id">{{ objet.nom }}</li>
                 </ul>
             </footer>
         </div>
