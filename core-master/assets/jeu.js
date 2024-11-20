@@ -49,32 +49,33 @@ Vue.createApp({
         ajoutMarqueurs() {
             for (objet of this.tab_obj) { 
                 // Configuration de la taille de l'icône dans un format lisible par Javascript
-                taille_icone = objet.taille_icone.match(/[\w.-]+/g).map(Number)
+                taille_icone = objet.taille_icone.match(/[\w.-]+/g).map(Number);
 
-                const icone = L.icon({
+                const icon = L.icon({
                     iconUrl: objet.url_icone,
                     iconSize: [taille_icone[0],taille_icone[1]],
                     iconAnchor: [objet.x, objet.y],
                 });
-                
-                const marqueur = L.marker([objet.x, objet.y], { icone });
+                console.log(objet.url_icone);
+
+                const marqueur = L.marker([objet.x, objet.y], { icon });
 
                 marqueur.bindPopup(`<strong>${objet.nom}</strong><br>${objet.description}`);
-                this.marqueurs.push({m : marqueur, zoom : objet.minZoomVisible})
+                this.marqueurs.push({m : marqueur, zoom : objet.minZoomVisible});
 
                 marqueur.addTo(this.carte);
             };
-        },
+        }/*,
 
         updateMarkersVisibility() {
-            const zoomLevel = this.carte.getZoom(); // Obtenir le niveau de zoom actuel
-            this.markers.forEach(({ marker, zoom }) => {
+            const zoomLevel = this.carte.getZoom();
+            this.marqueurs.forEach(({ marqueur, zoom }) => {
                 if (zoom <= zoomLevel) {
-                    marker.addTo(this.carte); // Ajouter le marqueur à la carte si le niveau de zoom est suffisant
+                    marqueur.addTo(this.carte);
                 } else {
-                    marker.removeFrom(this.carte); // Retirer le marqueur si le niveau de zoom est trop faible
+                    marqueur.removeFrom(this.carte); 
                 }
         })
-    }
+    }*/
     }
 }).mount('#appmap');
