@@ -3,6 +3,7 @@ Vue.createApp({
         return {
             tab_obj: [],
             carte: 0, 
+            marqueurs: [],
         };
     },
     created() {
@@ -28,7 +29,7 @@ Vue.createApp({
                 .then(result => {
                     // Transformation de la liste de dict en liste de listes
                     this.tab_obj = result
-                    this.addMarkers();
+                    this.ajoutMarqueurs();
                 });
         },
 
@@ -45,26 +46,35 @@ Vue.createApp({
             L.marker([-25.804837, 133.813477]).addTo(this.carte);
         },
 
-        // Méthode pour ajouter les marqueurs à la carte
-        addMarkers() {
-            // Itérer sur chaque objet et ajouter un marqueur
+        ajoutMarqueurs() {
             for (objet of this.tab_obj) { 
                 // Configuration de la taille de l'icône dans un format lisible par Javascript
                 taille_icone = objet.taille_icone.match(/[\w.-]+/g).map(Number)
-                
-                const icon = L.icon({
+
+                const icone = L.icon({
                     iconUrl: objet.url_icone,
                     iconSize: [taille_icone[0],taille_icone[1]],
                     iconAnchor: [objet.x, objet.y],
                 });
-                // Ajouter le marqueur à la carte
-                const marker = L.marker([objet.x, objet.y], { icon });
-
-                // Ajouter un popup au marqueur
-                marker.bindPopup(`<strong>${objet.nom}</strong><br>${objet.description}`);
-                marker.addTo(this.carte);
                 
+                const marqueur = L.marker([objet.x, objet.y], { icone });
+
+                marqueur.bindPopup(`<strong>${objet.nom}</strong><br>${objet.description}`);
+                this.marqueurs.push({m : marqueur, zoom : objet.minZoomVisible})
+
+                marqueur.addTo(this.carte);
             };
-        }
+        },
+
+        updateMarkersVisibility() {
+            const zoomLevel = this.carte.getZoom(); // Obtenir le niveau de zoom actuel
+            this.markers.forEach(({ marker, zoom }) => {
+                if (zoom <= zoomLevel) {
+                    marker.addTo(this.carte); // Ajouter le marqueur à la carte si le niveau de zoom est suffisant
+                } else {
+                    marker.removeFrom(this.carte); // Retirer le marqueur si le niveau de zoom est trop faible
+                }
+        })
+    }
     }
 }).mount('#appmap');
