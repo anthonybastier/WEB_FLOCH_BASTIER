@@ -16,22 +16,22 @@ Flight::route('/jeu', function() {
   Flight::render('jeu');
 });
 
-// Routes liées à l'identification pour entrer et sortir du jeu //
-
-Flight::route('GET /accueil', function() {
-  if (isset($_GET['pseudo']) and !empty($_GET['pseudo']));
-  Flight::render('pseudo', ['user'=> null]);
+// Route pour afficher la page d'accueil //
+Flight::route('GET /', function () {
+  Flight::render('jeu');
 });
 
-Flight::route('POST /accueil', function() {
-  if (isset($_POST['pseudo']) and !empty($_POST['log']));
-  $_SESSION['pseudo']= $_POST['pseudo'];
-  Flight::render('pseudo', ['user'=> $_POST]);
-});
+// Route pour sauvegarder le pseudo //
+Flight::route('POST /sauvegarderpseudo', function () {
+  $pseudo = Flight::request()->data->pseudo;
 
-Flight::route('GET /accueil', function() {
-  $_SESSION = [];
-  Flight::render('accueil');
+  if (empty($pseudo) || strlen($pseudo) > 12) {
+      Flight::json(['success' => false, 'message' => 'Pseudo invalide.']);
+  } else {
+      session_start();
+      $_SESSION['pseudo'] = $pseudo;
+      Flight::json(['success' => true, 'message' => 'Pseudo sauvegardé.', 'pseudo' => $pseudo]);
+  }
 });
 
 
