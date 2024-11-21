@@ -20,12 +20,17 @@ Vue.createApp({
     methods: {
         // Méthode pour charger les objets depuis l'API
         charger_obj(id = null) {
-            this.tab_obj = []; // Réinitialiser la liste des objets
             let url = '/api/objets';
             if (id) {
                 url += `?id_objet=${encodeURIComponent(id)}`;
             }
-            fetch(url)
+
+            let donnees = new FormData();
+            donnees.append('id_objet',id);
+            fetch(url, {  
+                method: 'post',
+                body: donnees
+            })
                 .then(result => result.json())
                 .then(result => {
                     // Transformation de la liste de dict en liste de listes
@@ -43,7 +48,6 @@ Vue.createApp({
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
             }).addTo(this.carte);
 
-            // Ajouter un marqueur de départ
             L.marker([-25.804837, 133.813477]).addTo(this.carte);
 
             this.carte.on('zoomend', this.updateMarkersVisibility);
@@ -63,16 +67,15 @@ Vue.createApp({
                 const marqueur = L.marker([objet.x, objet.y], { icon });
 
                 marqueur.bindPopup(`<strong>${objet.nom}</strong><br>${objet.description}`);
-                this.marqueurs.push({m : marqueur, zoom : objet.minzoomvisible});
+                this.marqueurs.push({m : marqueur, objet, zoom : objet.minzoomvisible});
 
                 marqueur.addTo(this.carte);
 
-                marqueur.on('click', () => {
-                    this.inventaire.push(objet); 
-                    marqueur.removeFrom(this.carte);
+                marqueur.on('click', () => {  
+                    this.departJeu(objet);
                 });
 
-                marqueur.on('mouseover',() => {
+                marqueur.on('mouseover',() => {   
                     marqueur.openPopup();
                   });
                 
@@ -87,7 +90,39 @@ Vue.createApp({
                 } else {
                     m.removeFrom(this.carte); 
                 }
-        })
-    }
+            })
+        },
+
+        departJeu(objet) {
+            // Regarde si c'est un objet de départ
+            let id = objet.id
+            if (objet.depart === "t" && id >= 12 && id <= 14){
+                this.inventaire.push(objet); 
+                // Suppression des objets de départ
+                for (let i = this.marqueurs.length - 1; i >= 0; i--) {
+                    const { m, objet: mObjet } = this.marqueurs[i];
+                    //let m = this.marqueurs[i].m
+                    //let obj = m.objet
+                    
+                    if (mObjet.id >= 12 && mObjet.id <= 14) {
+                        m.removeFrom(this.carte); // Supprime le marqueur de la carte
+                        this.marqueurs.splice(i, 1); // Supprime le marqueur de la liste
+                    }
+                }
+                if (id === '14') {
+                    // Chargement Fukushima + Tchernobyl
+                    this.charger_obj(5);
+                    this.charger_obj(6);
+                }else if (id === '13') {
+                    // Chargement de l'aéroport
+                    this.charger_obj(1);
+                }else if (id === '12'){
+                    // Chargement WTC
+                    this.charger_obj(7);
+                }
+
+            }
+
+        }
     }
 }).mount('#appmap');
