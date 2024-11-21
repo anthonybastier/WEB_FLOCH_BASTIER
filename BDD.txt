@@ -38,3 +38,10 @@ VALUES
 ('Pistolet', ST_SetSRID(ST_Point(-25.804837, 130.813477), 4326), 'Rendez-vous dans la main de la Liberté', 'assets/sprite/gun.png', ARRAY[32,32], 6, TRUE),
 ('Billet d_avion', ST_SetSRID(ST_Point(-25.805837, 133.813477), 4326), 'Rendez-vous à l aéroport de Kuala Lumpur', 'assets/sprite/plane_ticket.png', ARRAY[32,32], 6, TRUE),
 ('Mouchoir', ST_SetSRID(ST_Point(-25.806837, 136.813477), 4326), 'Rendez-vous à l endroit le plus radioactif de la planète', 'assets/sprite/tissue.png', ARRAY[32,32], 6, TRUE)
+
+CREATE TABLE Joueurs (
+id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY
+nom VARCHAR(255),
+date CURRENT_DATE,
+score INTEGER
+);
