@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="assets/accueil.css">
         <link rel="icon" href="assets/sprite/death.ico">
 
-        <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>    
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>    
     </head>
 
 
@@ -35,13 +35,13 @@
         </div>
 
         <div id="login">
-            <form action="/play" method="post">
+            <form action='/jeu' @submit.prevent="play">
 
                 <p>Entrez votre pseudo ({{nbrCaracRestants}} caractères max) :</p>
 
-                <input type="text" name="pseudo" placeholder="pseudo"></label>
+                <input type="text" id="pseudo" v-model="pseudo" required />
 
-                <input type="submit" name="envoi" value="Jouer à Escape Death">
+                <button type="submit">Jouer à Escape Death</button>
 
             </form>
         </div>
