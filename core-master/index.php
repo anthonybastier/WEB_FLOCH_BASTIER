@@ -2,6 +2,8 @@
 declare(strict_types=1);
 session_start();
 require 'flight/Flight.php';
+$link = pg_connect("host=localhost port=5432 dbname=escape_game user=postgres password=postgres");
+Flight::set('db', $link);
 
 
 Flight::route('/', function () {
@@ -16,20 +18,23 @@ Flight::route('/jeu', function() {
   Flight::render('jeu');
 });
 
-Flight::route('GET /play', function() {
-  if (isset($_GET['pseudo']) and !empty($_GET['pseudo']));
-  Flight::render('jeu', ['pseudo'=> null]);
-});
+Flight::route('POST /addpseudobdd', function() {
+	$link = Flight::get('db');
 
-Flight::route('POST /play', function() {
-  if (isset($_POST['pseudo']) and !empty($_POST['pseudo']));
-  $_SESSION['pseudo']= $_POST['pseudo'];
-  Flight::render('jeu', ['pseudo'=> $_POST]);
+	$input = json_decode(file_get_contents('php://input'), true);
+    if (isset($input['pseudo']) && !empty($input['pseudo'])) {
+        if ($input) {
+            echo json_encode(['success' => true, 'message' => 'Pseudo ajouté avec succès', 'redirect' => '/jeu']);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Erreur lors de l\'ajout du pseudo.']);
+        }
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Veuillez mettre un pseudo.']);
+    }
 });
 
 
 // Connexion à la BDD //
-$link = pg_connect("host=localhost port=5432 dbname=escape_game user=postgres password=postgres");
 
 if (!$link) {
   die('Erreur de connexion : ' . pg_last_error());
