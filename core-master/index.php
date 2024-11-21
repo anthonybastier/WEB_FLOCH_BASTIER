@@ -16,22 +16,15 @@ Flight::route('/jeu', function() {
   Flight::render('jeu');
 });
 
-// Route pour afficher la page d'accueil //
-Flight::route('GET /', function () {
-  Flight::render('jeu');
+Flight::route('GET /play', function() {
+  if (isset($_GET['pseudo']) and !empty($_GET['pseudo']));
+  Flight::render('jeu', ['pseudo'=> null]);
 });
 
-// Route pour sauvegarder le pseudo //
-Flight::route('POST /sauvegarderpseudo', function () {
-  $pseudo = Flight::request()->data->pseudo;
-
-  if (empty($pseudo) || strlen($pseudo) > 12) {
-      Flight::json(['success' => false, 'message' => 'Pseudo invalide.']);
-  } else {
-      session_start();
-      $_SESSION['pseudo'] = $pseudo;
-      Flight::json(['success' => true, 'message' => 'Pseudo sauvegardé.', 'pseudo' => $pseudo]);
-  }
+Flight::route('POST /play', function() {
+  if (isset($_POST['pseudo']) and !empty($_POST['pseudo']));
+  $_SESSION['pseudo']= $_POST['pseudo'];
+  Flight::render('jeu', ['pseudo'=> $_POST]);
 });
 
 
