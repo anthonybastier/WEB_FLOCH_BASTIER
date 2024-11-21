@@ -35,13 +35,13 @@
         </div>
 
         <div id="login">
-            <form action="" @submit.prevent>
+            <form action="/play" method="post">
 
                 <p>Entrez votre pseudo ({{nbrCaracRestants}} caractères max) :</p>
 
-                <textarea v-bind:style="{ color: nbrCaracRestants >= 0 ? 'black' : 'red' }" v-model="pseudo">Pseudo</textarea>
+                <input type="text" name="pseudo" placeholder="pseudo"></label>
 
-                <button @click="testpseudo">Jouer à Escape Death</button>
+                <input type="submit" name="envoi" value="Jouer à Escape Death">
 
             </form>
         </div>
