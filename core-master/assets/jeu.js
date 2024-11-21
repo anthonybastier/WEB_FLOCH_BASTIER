@@ -43,11 +43,18 @@ Vue.createApp({
         initMap() {
             // Création de la carte avec un centre initial et un zoom
             this.carte = L.map('map').setView([-25.804837, 133.813477], 6);
+
+            L.tileLayer('https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=e9da8ed0987a4ccdb4bb1710f21e0ee6', {
+                attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                apikey: 'TA_CLE_API_ICI', // Remplace par ta clé API Thunderforest
+                maxZoom: 22
+            }).addTo(this.carte);
+            /*
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
             }).addTo(this.carte);
-
+            */
             L.marker([-25.804837, 133.813477]).addTo(this.carte);
 
             this.carte.on('zoomend', this.updateMarkersVisibility);
