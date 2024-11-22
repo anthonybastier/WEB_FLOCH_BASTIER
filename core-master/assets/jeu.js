@@ -40,9 +40,12 @@ Vue.createApp({
         },
 
         selectionnerObjet(objet) {
-            this.inventaire.forEach(item => item.selected = false);
-
-            objet.selected = true;
+            if (objet.selectionne) {
+                objet.selectionne = false;
+            } else {
+                this.inventaire.forEach(item => item.selectionne = false);
+                objet.selectionne = true;
+            }
         },
 
         // Méthode pour initialiser la carte

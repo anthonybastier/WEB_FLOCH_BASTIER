@@ -18,7 +18,7 @@
             <footer id="inventaire">
                 <h3>Inventaire</h3>
                 <ul>
-                    <li v-for="objet in inventaire" :key="objet.id" :class="{ selected: objet.selected }" @click="selectionnerObjet(objet)">
+                    <li v-for="objet in inventaire" :key="objet.id" :class="{ selectionne: objet.selectionne }" @click="selectionnerObjet(objet)">
                         <img :src="objet.url_icone" :alt="objet.nom" style="width: 50px; height: auto;" />
                         <span> {{ objet.nom }}</span>
                     </li>
