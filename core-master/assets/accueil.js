@@ -3,8 +3,6 @@ Vue.createApp({
       return {
         pseudo: '',
         max: 12,
-        message: '',
-        success: false
       };
     },
     methods: {
