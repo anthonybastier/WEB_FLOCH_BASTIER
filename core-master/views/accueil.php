@@ -38,13 +38,13 @@
             <form action='/jeu' @submit.prevent="play">
 
                 <p>Entrez votre pseudo ({{nbrCaracRestants}} caractères max) :</p>
-
                 <input type="text" id="pseudo" v-model="pseudo" required />
-
                 <button type="submit">Jouer à Escape Death</button>
 
             </form>
         </div>
+
+        <a href="/jeu" Title="Jeu">Jouer à Escape Death sans se connecter</a>
         
         <script src="assets/accueil.js"></script>
     </body>
