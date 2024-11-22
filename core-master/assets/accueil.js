@@ -9,34 +9,33 @@ Vue.createApp({
     },
     methods: {
         async play() {
-    		try {
-        		const response = await fetch('/addpseudobdd', {
-            		method: 'POST',
-            		headers: {
-                		'Content-Type': 'application/json'
-            		},
-            		body: JSON.stringify({
-                		pseudo: this.pseudo
-            		})
-        		});
+            try {
+                const result = await fetch('/addpseudobdd', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        pseudo: this.pseudo
+                    })
+                });
+    
+                if (!result.ok) {
+                    const errorData = await result.json();
+                    console.error('Erreur:', errorData.error);
+                    throw new Error('Erreur serveur');
+                }
 
-        		const data = await response.json();
-        		console.log('Données reçues:', data);
-
-        		this.message = data.message;
-        		this.success = data.success;
-
-        		if (this.success) {
-        		    this.pseudo = '';
-        		    window.location.href = '/jeu';
-        		}
-    		} catch (error) {
-        		this.message = "Erreur lors de l'ajout du pseudo.";
-        		this.success = false;
-        		console.error('Fetch Error:', error);
-    		}
-		}
-        },
+                const data = await result.json();
+                if (data.redirect) {
+                    this.pseudo = '';
+                    window.location.href = data.redirect;
+                }
+            } catch (error) {
+                console.error('Erreur :', error);
+            }
+        }
+    },
     computed: {
         nbrCaracRestants() {
             return (this.max - this.pseudo.length);
