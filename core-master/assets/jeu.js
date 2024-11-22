@@ -107,7 +107,7 @@ Vue.createApp({
             // Regarde si c'est un objet de départ
             let id = objet.id
             if (objet.depart === "t" && id >= 12 && id <= 14){
-                this.inventaire.push(objet); 
+                this.inventaire.push({...objet, selectionne: false}); 
                 // Suppression des objets de départ
                 for (let i = this.marqueurs.length - 1; i >= 0; i--) {
                     const { m, objet: mObjet } = this.marqueurs[i];
@@ -116,20 +116,19 @@ Vue.createApp({
                     
                     if (mObjet.id >= 12 && mObjet.id <= 14) {
                         m.removeFrom(this.carte); // Supprime le marqueur de la carte
-                        console.log(this.marqueurs)
                         this.marqueurs.splice(i, 1); // Supprime le marqueur de la liste
                     }
                 }
                 if (id === '14') {
                     // Chargement Fukushima + Tchernobyl
-                    this.charger_obj(5);
-                    this.charger_obj(6);
+                    this.chargerObj(5);
+                    this.chargerObj(6);
                 }else if (id === '13') {
                     // Chargement de l'aéroport
-                    this.charger_obj(1);
+                    this.chargerObj(1);
                 }else if (id === '12'){
                     // Chargement WTC
-                    this.charger_obj(7);
+                    this.chargerObj(7);
                 }
 
             }
