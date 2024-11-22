@@ -42,6 +42,6 @@ VALUES
 CREATE TABLE Joueurs (
 id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY
 nom VARCHAR(255),
-date CURRENT_DATE,
+date timestamp without time zone,
 score INTEGER
 );
