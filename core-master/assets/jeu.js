@@ -9,7 +9,7 @@ Vue.createApp({
     },
     created() {
         // Charger les objets dès la création du composant
-        this.charger_obj();
+        this.chargerObj();
     },
     mounted() {
         // Initialiser la carte et ajouter les marqueurs une fois la carte chargée
@@ -19,7 +19,7 @@ Vue.createApp({
     },
     methods: {
         // Méthode pour charger les objets depuis l'API
-        charger_obj(id = null) {
+        chargerObj(id = null) {
             let url = '/api/objets';
             if (id) {
                 url += `?id_objet=${encodeURIComponent(id)}`;
@@ -39,6 +39,12 @@ Vue.createApp({
                 });
         },
 
+        selectionnerObjet(objet) {
+            this.inventaire.forEach(item => item.selected = false);
+
+            objet.selected = true;
+        },
+
         // Méthode pour initialiser la carte
         initMap() {
             // Création de la carte avec un centre initial et un zoom
@@ -46,15 +52,9 @@ Vue.createApp({
 
             L.tileLayer('https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=e9da8ed0987a4ccdb4bb1710f21e0ee6', {
                 attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                apikey: 'TA_CLE_API_ICI', // Remplace par ta clé API Thunderforest
                 maxZoom: 22
             }).addTo(this.carte);
-            /*
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            }).addTo(this.carte);
-            */
+
             L.marker([-25.804837, 133.813477]).addTo(this.carte);
 
             this.carte.on('zoomend', this.updateMarkersVisibility);
@@ -113,6 +113,7 @@ Vue.createApp({
                     
                     if (mObjet.id >= 12 && mObjet.id <= 14) {
                         m.removeFrom(this.carte); // Supprime le marqueur de la carte
+                        console.log(this.marqueurs)
                         this.marqueurs.splice(i, 1); // Supprime le marqueur de la liste
                     }
                 }

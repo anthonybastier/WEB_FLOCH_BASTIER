@@ -15,3 +15,8 @@ h1 { height: 8%;
 
 #inventaire { height: 16%;
     width: 100%;}
+
+.selected {
+    border: 2px solid #ff0000;
+    background-color: #f0f0f0;
+}
