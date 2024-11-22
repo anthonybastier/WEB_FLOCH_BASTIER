@@ -26,23 +26,41 @@ Le joueur commence devant une carte, on lui dit seulement que le jeu cherche à 
 
 Étape 2 :
 	- Si click sur Kuala Lumpur avec le billet, le joueur meurt dans l'accident de la Malaysia Airline. 
-	- Si click sur statue de la liberté avec le pistolet, nouvel indice : Vie éternelle dans l'épave du naufrage le plus meurtrier
+	- Si click sur statue de la liberté, nouvel indice : Vie éternelle dans l'épave du naufrage le plus meurtrier
 	- Si click proche de Fukushima, la vague de 2011 emporte le joueur qui meurt. (Succès : bu la tasse)
-	- Si click autour de Tchernobyl, message "heureusement que tu as pensé à ta combi protectrice" et le joueur trouve une boîte à ouvrir avec un pass magnétique, Indice gravé : Pass dans le lieu de la pire éruption volcanique ever
+	- Si click autour de Tchernobyl, message "heureusement que tu as pensé à ta combi protectrice" et le joueur trouve une boîte à code, Indice gravé : code dans le lieu de la pire éruption volcanique ever
 
 
 Étape 3 :
-	- Si click sur le paquebot Wilheim Gustloff, le joueur plonge et trouve dans l'épave le coffre de la vie éternelle fermé par un cadenas à code. Indice gravé : Code à trouver au centre de la pyramide
+	- Si click sur le paquebot Wilheim Gustloff, le joueur plonge et trouve dans l'épave le coffre de la vie éternelle fermé. Indice gravé : RDV au centre de la pyramide
 	- Si click sur Titanic le joueur plonge dans l'épave et y trouve dans la salle du commandant de bord l'indice gravé : rdv en haut d'une tour de NYC
-	- Si click sur volcan Tambora (Indonésie), le joueur trouve le pass magnétique 
+	- Si click sur volcan Tambora (Indonésie) avec le mouchoir, le joueur trouve le code 0000 
 	- Si click sur le Vésuve à Pompéi (Naples), le joueur meurt carbonisé, s'étant trop approché de l'éruption, une statue de lui restera sur place tho :) (Succès : Pline l'ancien) 
 
 Étape 4 :
-	- Si click sur la boîte de Tchernobyl avec le pass, c'est gagné ! 
+	- Si click sur Tchernobyl et code 0000, c'est gagné ! 
 	- Si click sur une tour à NYC, le joueur meurt dans l'accident des tours jumelles du 11/9 (Succès : 9/11)
  	- Si click sur la pyramide du Louvre, le joueur meurt en se prenant une tortue tombée du ciel (Succès : Eschyle le Grec)
-	- Si click sur la pyramide de Khéops, le joueur perd 5min sur son temps pour obtenir le code : 0000 ^^^^
+	- Si click sur la pyramide de Khéops, le joueur perd 5min sur son temps pour qu'on lui dise qu'il suffisait d'utiliser le gun sur le coffre.
 
 
 Étape 5 : 
-	- Si click à nouveau sur le paquebot, inscription du code "0000", victoire ? Mais que de temps perdu...
+	- Si click à nouveau sur le paquebot avec le gun, victoire
+
+
+Résumé des objets :
+
+Pistolet : ObjetRecuperable 
+Mouchoir : ObjetRecuperable
+Billet d'avion : ObjetRecuperable 
+Aéroport : ObjetBloqueParObjet
+Statue de la Liberté : Objet 
+Pyramide Louvre : Objet 
+Pyramide Khéops : Objet 
+Centrale nucléaire Fukushima : Objet
+Centrale nucléaire de Pripiat : ObjetBloqueParCode
+Tours jumelles à NYC : Objet
+Volcan Tambora : ObjetBloqueParObjet
+Vésuve à Pompéi : Objet
+Épave du Wilhelm Gustloff : ObjetBloqueParObjet
+Épave Titanic : Objet
