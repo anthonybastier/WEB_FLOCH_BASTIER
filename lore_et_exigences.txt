@@ -60,7 +60,7 @@ Pyramide Khéops : Objet
 Centrale nucléaire Fukushima : Objet
 Centrale nucléaire de Pripiat : ObjetBloqueParCode
 Tours jumelles à NYC : Objet
-Volcan Tambora : ObjetBloqueParObjet
+Volcan Tambora : Objet
 Vésuve à Pompéi : Objet
 Épave du Wilhelm Gustloff : ObjetBloqueParObjet
 Épave Titanic : Objet

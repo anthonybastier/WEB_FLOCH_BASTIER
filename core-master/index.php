@@ -18,21 +18,24 @@ Flight::route('/jeu', function() {
   Flight::render('jeu');
 });
 
+// Ajouter un pseudo à la bdd //
+
 Flight::route('POST /addpseudobdd', function() {
 	$link = Flight::get('db');
-
 	$input = json_decode(file_get_contents('php://input'), true);
     if (isset($input['pseudo']) && !empty($input['pseudo'])) {
-        if ($input) {
-            echo json_encode(['success' => true, 'message' => 'Pseudo ajouté avec succès', 'redirect' => '/jeu']);
-        } else {
-            echo json_encode(['success' => false, 'message' => 'Erreur lors de l\'ajout du pseudo.']);
-        }
+      $pseudo = pg_escape_string($link, $input['pseudo']);
+      $query = "INSERT INTO joueurs (nom) VALUES ('$pseudo')";
+      $result = pg_query($link, $query);
+      if ($result) {
+        echo json_encode(['redirect' => '/jeu']);
+      } else {
+        echo json_encode(['error' => 'Erreur lors de l\'ajout du pseudo.']);
+      }
     } else {
-        echo json_encode(['success' => false, 'message' => 'Veuillez mettre un pseudo.']);
+    echo json_encode(['error' => 'Veuillez ajouter un pseudo.']);
     }
 });
-
 
 // Connexion à la BDD //
 
