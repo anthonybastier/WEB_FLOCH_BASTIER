@@ -34,7 +34,7 @@ Le joueur commence devant une carte, on lui dit seulement que le jeu cherche à 
 Étape 3 :
 	- Si click sur le paquebot Wilheim Gustloff, le joueur plonge et trouve dans l'épave le coffre de la vie éternelle fermé. Indice gravé : RDV au centre de la pyramide
 	- Si click sur Titanic le joueur plonge dans l'épave et y trouve dans la salle du commandant de bord l'indice gravé : rdv en haut d'une tour de NYC
-	- Si click sur volcan Tambora (Indonésie) avec le mouchoir, le joueur trouve le code 0000 
+	- Si click sur volcan Tambora (Indonésie), le joueur trouve le code 0000 
 	- Si click sur le Vésuve à Pompéi (Naples), le joueur meurt carbonisé, s'étant trop approché de l'éruption, une statue de lui restera sur place tho :) (Succès : Pline l'ancien) 
 
 Étape 4 :
