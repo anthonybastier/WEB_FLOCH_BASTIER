@@ -25,7 +25,8 @@ Flight::route('POST /addpseudobdd', function() {
 	$input = json_decode(file_get_contents('php://input'), true);
     if (isset($input['pseudo']) && !empty($input['pseudo'])) {
       $pseudo = pg_escape_string($link, $input['pseudo']);
-      $query = "INSERT INTO joueurs (nom) VALUES ('$pseudo')";
+      $score = isset($input['score']) ? intval($input['score']) : 0;
+      $query = "INSERT INTO joueurs (nom, score, date) VALUES ('$pseudo', $score, NOW())";
       $result = pg_query($link, $query);
       if ($result) {
         echo json_encode(['redirect' => '/jeu']);
@@ -68,6 +69,19 @@ Flight::route('/api/objets', function(){
   Flight::json($tab_obj);
 });
 
+// Afficher le hall of fame //
+
+Flight::route('GET /halloffame', function() {
+  $link = Flight::get('db');
+  $query = "SELECT nom AS pseudo, score, date FROM joueurs ORDER BY score DESC, date ASC";
+  $result = pg_query($link, $query);
+  if ($result) {
+      $joueurs = pg_fetch_all($result);
+      echo json_encode($joueurs);
+  } else {
+      echo json_encode(['error' => 'Erreur lors de la récupération des données.']);
+  }
+});
 
 
 Flight::start();
