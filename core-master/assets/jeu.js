@@ -59,6 +59,8 @@ Vue.createApp({
 
             this.heatmap = L.tileLayer.wms('http://localhost:8080/geoserver/wms', {
                 layers : 'BastierAnthony:objet' ,
+                format : 'image/png',
+                transparent : true
             })
 
             L.marker([-25.804837, 133.813477]).addTo(this.carte);
