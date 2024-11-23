@@ -24,36 +24,36 @@ CREATE TABLE ObjetBloqueParCode () INHERITS (ObjetBloqueParObjet);
 
 INSERT INTO Objet (nom, point, description, url_icone, taille_icone, minZoomVisible, depart)
 VALUES 
-    ('Statue de la Liberté', ST_SetSRID(ST_Point(-74.044547, 40.689193), 4326), 'Vie éternelle dans l'épave du naufrage le plus meurtrier', 'assets/sprite/liberty_statue.png', ARRAY[32, 32], 12, FALSE),
-    ('Pyramide du Louvre', ST_SetSRID(ST_Point(2.33585, 48.860991), 4326), 'Vous mourrez parce qu'une tortue tombée du ciel vous a éclaté le crâne. (Succès : Eschyle le Grec)', 'assets/sprite/louvre_pyramide.png', ARRAY[32, 32], 14, FALSE),
-    ('Pyramide de Khéops', ST_SetSRID(ST_Point(31.134224, 29.979172), 4326), 'Vous perdez votre temps… Il suffisait d'utiliser le pistolet sur le coffre.', 'assets/sprite/pyramid.png', ARRAY[32, 32], 7, FALSE),
+    ('Statue de la Liberté', ST_SetSRID(ST_Point(-74.044547, 40.689193), 4326), 'Vie éternelle dans le lieu du naufrage le plus meurtrier', 'assets/sprite/liberty_statue.png', ARRAY[32, 32], 12, FALSE),
+    ('Pyramide du Louvre', ST_SetSRID(ST_Point(2.33585, 48.860991), 4326), 'Une tortue tombée du ciel vous éclate le crâne et vous mourrez sur le coup. (Succès : Eschyle le Grec)', 'assets/sprite/louvre_pyramide.png', ARRAY[32, 32], 14, FALSE),
+    ('Pyramide de Khéops', ST_SetSRID(ST_Point(31.134224, 29.979172), 4326), 'Vous perdez votre temps… Pourquoi ne pas utiliser votre pistolet sur le coffre ?', 'assets/sprite/pyramid.png', ARRAY[32, 32], 7, FALSE),
     ('Centrale nucléaire de Fukushima', ST_SetSRID(ST_Point(141.032406, 37.421366), 4326), 'la vague de 2011 vous emporte, vous mourrez. (Succès : bu la tasse)', 'assets/sprite/Fukushima.png', ARRAY[32, 32], 7, FALSE),
-    ('Tours jumelles à NYC', ST_SetSRID(ST_Point(-74.013165, 40.711573), 4326), 'Vous mourrez dans l'accident des tours jumelles. (Succès : 9/11)', 'assets/sprite/twin_towers.png', ARRAY[32, 32], 12, FALSE),
-    ('Vésuve à Pompéi', ST_SetSRID(ST_Point(14.42625, 40.820983), 4326), 'Vous mourrez carbonisé, vous étant trop approché de l'éruption, une statue de vous restera sur place néanmoins ! (Succès : Pline l'ancien)', 'assets/sprite/vesuve.png', ARRAY[32, 32], 7, FALSE),
-    ('Épave du Titanic', ST_SetSRID(ST_Point(-49.768066, 41.883876), 4326), 'Vous plongez dans l'épave et trouvez dans la salle du commandant de bord un indice gravé.', 'assets/sprite/shipwreck.png', ARRAY[32, 32], 6, FALSE),
+    ('Tours jumelles à NYC', ST_SetSRID(ST_Point(-74.013165, 40.711573), 4326), 'Vous mourrez dans le crash des tours jumelles. (Succès : 9/11)', 'assets/sprite/twin_towers.png', ARRAY[32, 32], 12, FALSE),
+    ('Vésuve à Pompéi', ST_SetSRID(ST_Point(14.42625, 40.820983), 4326), 'Vous mourrez carbonisé, une statue de vous restera sur place néanmoins ! (Succès : Pline l ancien)', 'assets/sprite/vesuve.png', ARRAY[32, 32], 7, FALSE),
+    ('Épave du Titanic', ST_SetSRID(ST_Point(-49.768066, 41.883876), 4326), 'Vous plongez et trouvez dans la salle du commandant de bord un indice gravé.', 'assets/sprite/shipwreck.png', ARRAY[32, 32], 6, FALSE);
 
 INSERT INTO ObjetRecuperable (nom, point, description, url_icone, taille_icone, minZoomVisible, depart)
 VALUES
-('Pistolet', ST_SetSRID(ST_Point(-25.804837, 130.813477), 4326), 'Rendez-vous dans la main de la Liberté', 'assets/sprite/gun.png', ARRAY[32,32], 6, TRUE),
-('Billet d\'avion', ST_SetSRID(ST_Point(-25.805837, 133.813477), 4326), 'Rendez-vous à l\'aéroport de Kuala Lumpur', 'assets/sprite/plane_ticket.png', ARRAY[32,32], 6, TRUE),
-('Mouchoir', ST_SetSRID(ST_Point(-25.806837, 136.813477), 4326), 'Rendez-vous à l\'endroit le plus radioactif de la planète', 'assets/sprite/tissue.png', ARRAY[32,32], 6, TRUE)
+    ('Pistolet', ST_SetSRID(ST_Point(-25.804837, 130.813477), 4326), 'Rendez-vous dans la main de la Liberté', 'assets/sprite/gun.png', ARRAY[32,32], 6, TRUE),
+    ('Billet d avion', ST_SetSRID(ST_Point(-25.805837, 133.813477), 4326), 'Billet au départ de Kuala Lumpur', 'assets/sprite/plane_ticket.png', ARRAY[32,32], 6, TRUE),
+    ('Mouchoir', ST_SetSRID(ST_Point(-25.806837, 136.813477), 4326), 'Rendez-vous dans le lieu le plus radioactif de la planète', 'assets/sprite/tissue.png', ARRAY[32,32], 6, TRUE);
 
-INSERT INTO ObjetCode (nom, point, description, url_icone, taille_icone, minZoomVisible, depart)
+INSERT INTO ObjetCode (nom, point, description, url_icone, taille_icone, minZoomVisible, depart, code)
 VALUES
-('Volcan Tambora', ST_SetSRID(ST_Point(117.996597, -8.24823), 4326), 'Quelle chance ! Pas d'éruption aujourd'hui.', 'assets/sprite/Tambora.png', ARRAY[32, 32], 5, FALSE, 0000),
+    ('Volcan Tambora', ST_SetSRID(ST_Point(117.996597, -8.24823), 4326), 'Quelle chance ! Le volcan semble calme.', 'assets/sprite/Tambora.png', ARRAY[32, 32], 5, FALSE, 0000);
 
-INSERT INTO ObjetBloqueParCode (nom, point, description, url_icone, taille_icone, minZoomVisible, depart)
+INSERT INTO ObjetBloqueParCode (nom, point, description, url_icone, taille_icone, minZoomVisible, depart, indice, idBloque)
 VALUES 
-    ('Centrale nucléaire de Pripiat', ST_SetSRID(ST_Point(30.098677, 51.389283), 4326), 'Attention à ne rien toucher… Vous trouvez une boîte fermée par un cadenas à code.', 'assets/sprite/tchernobyl.png', ARRAY[32, 32], 6, FALSE, 'Code dans le lieu de la pire éruption volcanique', 11),
+    ('Centrale nucléaire de Pripiat', ST_SetSRID(ST_Point(30.098677, 51.389283), 4326), 'Attention à ne rien toucher… Vous trouvez une boîte fermée par un cadenas à code.', 'assets/sprite/tchernobyl.png', ARRAY[32, 32], 6, FALSE, 'Code dans le lieu de la pire éruption volcanique', 11);
 
-INSERT INTO ObjetBloqueParObjet (nom, point, description, url_icone, taille_icone, minZoomVisible, depart)
+INSERT INTO ObjetBloqueParObjet (nom, point, description, url_icone, taille_icone, minZoomVisible, depart, indice, idBloque)
 VALUES 
-    ('Aéroport', ST_SetSRID(ST_Point(3.122519, 101.549377), 4326), 'Vous mourrez dans l'accident de la Malaysia Airline du 8 mars 2014. (Succès : Comme un avion sans elle)', 'assets/sprite/airport.png', ARRAY[32, 32], 7, FALSE, 'Un titre d'embarquement vous est demandé.', 9),
-    ('Épave du Wilhelm Gustloff', ST_SetSRID(ST_Point(17.385864, 55.103418), 4326), 'Vous plongez et trouvez dans l'épave le coffre de la vie éternelle fermé.', 'assets/sprite/shipwreck.png', ARRAY[32, 32], 6, FALSE, 'RDV au centre de la pyramide', 8),
+    ('Aéroport', ST_SetSRID(ST_Point(3.122519, 101.549377), 4326), 'Vous mourrez dans le crash de la Malaysia Airline du 8 mars 2014. (Succès : Comme un avion sans elle)', 'assets/sprite/airport.png', ARRAY[32, 32], 7, FALSE, 'Un titre de transport vous est demandé.', 9),
+    ('Épave du Wilhelm Gustloff', ST_SetSRID(ST_Point(17.385864, 55.103418), 4326), 'Vous plongez et trouvez le coffre de la vie éternelle fermé.', 'assets/sprite/shipwreck.png', ARRAY[32, 32], 6, FALSE, 'RDV au centre de la pyramide', 8);
 
 
 CREATE TABLE Joueurs (
-id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY
+id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 nom VARCHAR(255),
 date timestamp without time zone,
 score INTEGER
