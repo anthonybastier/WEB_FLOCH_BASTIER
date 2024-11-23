@@ -3,8 +3,9 @@ Vue.createApp({
         return {
             tab_obj: [],
             inventaire: [],
-            carte: 0, 
+            carte: null, 
             marqueurs: [],
+            heatmap: null,
         };
     },
     created() {
@@ -48,9 +49,7 @@ Vue.createApp({
             }
         },
 
-        // Méthode pour initialiser la carte
         initMap() {
-            // Création de la carte avec un centre initial et un zoom
             this.carte = L.map('map').setView([-25.804837, 133.813477], 6);
 
             L.tileLayer('https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=e9da8ed0987a4ccdb4bb1710f21e0ee6', {
@@ -58,9 +57,23 @@ Vue.createApp({
                 maxZoom: 22
             }).addTo(this.carte);
 
+            this.heatmap = L.tileLayer.wms('http://localhost:8080/geoserver/wms', {
+                layers : 'BastierAnthony:objet' ,
+            })
+
             L.marker([-25.804837, 133.813477]).addTo(this.carte);
 
             this.carte.on('zoomend', this.updateMarkersVisibility);
+        },
+
+        activerTriche(){
+            
+            if (this.carte.hasLayer(this.heatmap)) {
+                this.heatmap.removeFrom(this.carte);
+            }else{
+                this.heatmap.addTo(this.carte)
+
+            }
         },
 
         ajoutMarqueurs() {

@@ -14,6 +14,7 @@
     <body>
         <h1>Escape Death</h1>
         <div id="appmap">
+        <label>Triche ?<input type="checkbox" @click="activerTriche" ></label>
             <div id="map"></div>
             <footer id="inventaire">
                 <h3>Inventaire</h3>
