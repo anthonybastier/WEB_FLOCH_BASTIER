@@ -1,8 +1,10 @@
 Vue.createApp({
+    el: '#hall_of_fame',
     data() {
       return {
         pseudo: '',
         max: 12,
+        joueurs: []
       };
     },
     methods: {
@@ -46,4 +48,16 @@ Vue.createApp({
             };
         },
     },
+    created() {
+        fetch('/halloffame')
+          .then(response => response.json())
+          .then(data => {
+            if (!data.error) {
+              this.joueurs = data;
+            } else {
+              console.error(data.error);
+            }
+          })
+          .catch(error => console.error('Erreur lors du chargement des données:', error));
+      }
   }).mount('#login');
