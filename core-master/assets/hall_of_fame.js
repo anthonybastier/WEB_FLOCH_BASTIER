@@ -24,11 +24,11 @@ Vue.createApp({
             const ligne = document.createElement("tr");
 
             const cellule1 = document.createElement("th");
-            cellule1.textContent = player['pseudo'];
+            cellule1.textContent = joueur['nom'];
             const cellule2 = document.createElement("td");
-            cellule2.textContent = player['score'];
+            cellule2.textContent = joueur['score'];
             const cellule3 = document.createElement("td");
-            cellule3.textContent = tbody.rows.length + 1;
+            cellule3.textContent = joueur['date'];
 
             ligne.appendChild(cellule1);
             ligne.appendChild(cellule2);
