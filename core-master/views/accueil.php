@@ -13,7 +13,11 @@
 
     <body>
         <header> 
-            <h1>Escape Death</h1>
+            <div class="titre">
+                <img src="assets/sprite/death.png" class="img left">
+                    <h1>Escape Death</h1>
+                <img src="assets/sprite/death.png" class="img right">
+            </div>
             <h2>Hall of fame</h2>
         </header>
         <div id="hall_of_fame">
@@ -38,10 +42,7 @@
 
             </form>
         </div>
-        <footer>
-            <a href="/jeu" Title="Jeu">Jouer à Escape Death sans se connecter</a>
-        </footer>
-        
+
         <script src="assets/accueil.js"></script>
         <script src="assets/hall_of_fame.js"></script>
     </body>
