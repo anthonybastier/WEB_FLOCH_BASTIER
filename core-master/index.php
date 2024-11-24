@@ -26,7 +26,7 @@ Flight::route('POST /addpseudobdd', function() {
     if (isset($input['pseudo']) && !empty($input['pseudo'])) {
       $pseudo = pg_escape_string($link, $input['pseudo']);
       $score = isset($input['score']) ? intval($input['score']) : 0;
-      $query = "INSERT INTO joueurs (nom, score, date) VALUES ('$pseudo', $score, NOW())";
+      $query = "INSERT INTO joueurs (nom, date) VALUES ('$pseudo', NOW())";
       $result = pg_query($link, $query);
       if ($result) {
         echo json_encode(['redirect' => '/jeu']);
@@ -85,6 +85,23 @@ Flight::route('GET /halloffame', function() {
       echo json_encode(['error' => 'Erreur lors de la récupération des données.']);
   }
 });
+
+// Ajouter le score à la BDD //
+
+Flight::route('POST /addscore', function() {
+	$link = Flight::get('db');
+	$input = json_decode(file_get_contents('php://input'), true);
+    if (isset($input['pseudo']) && isset($input['score'])) {
+      $pseudo = ($input['pseudo']);
+      $score = ($input['score']);
+      $query = "UPDATE joueurs SET score = $2 WHERE pseudo = $1";
+      $result = pg_query_params($link, $query, array($pseudo, $score));
+      
+    } else {
+    echo json_encode(['error' => 'Le score n\'a pas été ajouté à la BDD.']);
+    }
+});
+
 
 
 Flight::start();
