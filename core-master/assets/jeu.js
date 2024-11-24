@@ -37,7 +37,7 @@ Vue.createApp({
                     const minutes = Math.floor(this.tempsRestant / 60);
                     const seconds = this.tempsRestant % 60;
         
-                    // Maj affichage minuetur
+                    // Maj affichage minuteur
                     timeDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
                 } else {
                     clearInterval(this.timer);
@@ -175,7 +175,7 @@ Vue.createApp({
                     const { m, objet: mObjet } = this.marqueurs[i];
                     
                     if (mObjet.id >= 8 && mObjet.id <= 10) {
-                        m.removeFrom(this.carte); // Supprime le marqueur de la carte
+                        m.removeFrom(this.carte); 
                         this.marqueurs.splice(i, 1); // Supprime le marqueur de la liste
                     }
                 }
