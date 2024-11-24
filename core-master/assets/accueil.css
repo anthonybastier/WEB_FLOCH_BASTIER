@@ -1,4 +1,5 @@
-header {grid-column: 1 / span fr;   
+header {grid-column: 1 / span fr;
+    text-align: center;   
     }
 
 table {border-collapse: collapse;
@@ -10,4 +11,15 @@ th {border: 1px solid #000000;
     text-align: left;
     padding: 8px;
     background-color: #c89b2175;
+    }
+
+footer {height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: 700;
+    align-content:flex-end;
+    position: fixed;
+    bottom: 0px;
+    width: 100vh;
     }
