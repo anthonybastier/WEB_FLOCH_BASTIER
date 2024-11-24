@@ -207,7 +207,31 @@ Vue.createApp({
                 this.chargerObj(11) // Volcan Tambora
                 txt = objet.description
                 txt += "<br> <strong> Indice : </strong>" + objet.indice
+                txt += "<br> <strong> Entrez le code de la boîte : </strong>"
+                txt += "<form id='code-form' onsubmit='return false;'>"
+                txt += "<input type='number' class='code' min='0' max='9'>"
+                txt += "<input type='number' class='code' min='0' max='9'>"
+                txt += "<input type='number' class='code' min='0' max='9'>"
+                txt += "<input type='number' class='code' min='0' max='9'>"
+                txt += "<button type='button' id='ouvrir'>Ouvrir</button> </form>"
                 this.affichagePopup(objet, txt)
+
+                // Vérification du code
+                setTimeout(() => {
+                    const ouverture = document.getElementById('ouvrir');
+                    if (ouverture) {
+                        ouverture.addEventListener('click', () => {
+                            // Selection de tous les nombres
+                            const nombres = Array.from(document.querySelectorAll('.code'));
+                            const codeSaisi = nombres.map(input => input.value).join('');
+                            if (codeSaisi === '0000') {
+                                this.finJeu(true, "Bravo ! Vous avez ouvert la boîte de Pandore ?");
+                            } else {
+                                alert("Code incorrect. Réessayez !");
+                            }
+                        });
+                    }
+                }, 500);
             }
             if (id == '1'){
                 // Clic sur la Statue de la Liberté
@@ -215,9 +239,14 @@ Vue.createApp({
                 this.chargerObj(14) // Épave du Wilhelm Gustloff
                 this.affichagePopup(objet, objet.description)
             }
+
             // Etape 3
             if (id == '14'){
                 // Clic sur le Wilhelm Gustloff
+                if ((this.inventaire[0].selectionne)){
+                    txt = "Vous tirez sur le coffre de la vie éternelle avec le pistolet. Il s'ouvre, la vie éternelle s'offre à vous !"
+                    this.finJeu(true, txt)
+                }
                 this.chargerObj(2) // Louvre
                 this.chargerObj(3) // Khéops
                 txt = objet.description
@@ -230,6 +259,30 @@ Vue.createApp({
                 txt = objet.description
                 txt += "<br> <strong> Indice : </strong> Rendez-vous en haut d'une tour de NYC."
                 this.affichagePopup(objet, txt)
+            }
+            if (id == '11'){
+                // Clic sur le volcan Tambora
+                txt = objet.description
+                txt += "<br> <strong> Code :</strong> " + "0000"
+                this.affichagePopup(objet, txt)
+            }
+            if (id == '6'){
+                // Clic sur le Vésuve
+                this.finJeu(false, objet.description)
+            }
+
+            // Etape 4
+            if (id == '5'){
+                // Clic sur les Tours Jumelles
+                this.finJeu(false, objet.description)
+            }
+            if (id == '2'){
+                // Clic sur le Louvre
+                this.finJeu(false, objet.description)
+            }
+            if (id == '3'){
+                // Clic sur Khéops
+                this.affichagePopup(objet, objet.description)
             }
         },
 
