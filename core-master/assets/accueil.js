@@ -28,6 +28,8 @@ Vue.createApp({
 
                 const data = await result.json();
                 if (data.redirect) {
+                    localStorage.setItem('pseudo', this.pseudo);
+                    console.log(this.pseudo);
                     this.pseudo = '';
                     window.location.href = data.redirect;
                 }
@@ -49,6 +51,7 @@ Vue.createApp({
         },
     },
     created() {
+        console.log(this.pseudo);
         fetch('/halloffame')
           .then(response => response.json())
           .then(data => {
