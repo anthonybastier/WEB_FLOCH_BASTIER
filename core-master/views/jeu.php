@@ -13,6 +13,9 @@
 
     <body>
         <h1>Escape Death</h1>
+        <div id="timer">
+            Temps restant : <span id="time-display">10:00</span>
+        </div>
         <div id="appmap">
         <label>Triche ?<input type="checkbox" @click="activerTriche" ></label>
             <div id="map"></div>
