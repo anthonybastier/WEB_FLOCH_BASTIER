@@ -44,8 +44,9 @@
 
             </form>
         </div>
-
-        <a href="/jeu" Title="Jeu">Jouer à Escape Death sans se connecter</a>
+        <footer>
+            <a href="/jeu" Title="Jeu">Jouer à Escape Death sans se connecter</a>
+        </footer>
         
         <script src="assets/accueil.js"></script>
     </body>
