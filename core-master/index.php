@@ -92,10 +92,16 @@ Flight::route('POST /addscore', function() {
 	$link = Flight::get('db');
 	$input = json_decode(file_get_contents('php://input'), true);
     if (isset($input['pseudo']) && isset($input['score'])) {
-      $pseudo = ($input['pseudo']);
-      $score = ($input['score']);
-      $query = "UPDATE joueurs SET score = $2 WHERE pseudo = $1";
+      $pseudo = $input['pseudo'];
+      $score = $input['score'];
+      $query = "UPDATE joueurs SET score = $2 WHERE nom = $1";
       $result = pg_query_params($link, $query, array($pseudo, $score));
+
+      if ($result) {
+        echo json_encode(['success' => true, 'message' => 'Score mis à jour avec succès']);
+    } else {
+        echo json_encode(['success' => false, 'error' => 'Erreur lors de la mise à jour du score.']);
+    }
       
     } else {
     echo json_encode(['error' => 'Le score n\'a pas été ajouté à la BDD.']);
