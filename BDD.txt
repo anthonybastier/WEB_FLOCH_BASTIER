@@ -34,9 +34,9 @@ VALUES
 
 INSERT INTO ObjetRecuperable (id, nom, point, description, url_icone, taille_icone, minZoomVisible, depart)
 VALUES
-    (8, 'Pistolet', ST_SetSRID(ST_Point(-25.804837, 130.813477), 4326), 'Rendez-vous dans la main de la Liberté', 'assets/sprite/gun.png', ARRAY[32,32], 6, TRUE),
-    (9, 'Billet d avion', ST_SetSRID(ST_Point(-25.805837, 133.813477), 4326), 'Billet au départ de Kuala Lumpur', 'assets/sprite/plane_ticket.png', ARRAY[32,32], 6, TRUE),
-    (10, 'Mouchoir', ST_SetSRID(ST_Point(-25.806837, 136.813477), 4326), 'Rendez-vous dans le lieu le plus radioactif de la planète', 'assets/sprite/tissue.png', ARRAY[32,32], 6, TRUE);
+    (8, 'Pistolet', ST_SetSRID(ST_Point(130.813477, -25.804837), 4326), 'Rendez-vous dans la main de la Liberté', 'assets/sprite/gun.png', ARRAY[32,32], 6, TRUE),
+    (9, 'Billet d avion', ST_SetSRID(ST_Point(133.813477, -25.805837), 4326), 'Billet au départ de Kuala Lumpur', 'assets/sprite/plane_ticket.png', ARRAY[32,32], 6, TRUE),
+    (10, 'Mouchoir', ST_SetSRID(ST_Point(136.813477, -25.806837), 4326), 'Rendez-vous dans le lieu le plus radioactif de la planète', 'assets/sprite/tissue.png', ARRAY[32,32], 6, TRUE);
 
 INSERT INTO ObjetCode (id, nom, point, description, url_icone, taille_icone, minZoomVisible, depart, code)
 VALUES
@@ -48,7 +48,7 @@ VALUES
 
 INSERT INTO ObjetBloqueParObjet (id, nom, point, description, url_icone, taille_icone, minZoomVisible, depart, indice, idBloque)
 VALUES 
-    (13, 'Aéroport', ST_SetSRID(ST_Point(3.122519, 101.549377), 4326), 'Vous mourrez dans le crash de la Malaysia Airline du 8 mars 2014. (Succès : Comme un avion sans elle)', 'assets/sprite/airport.png', ARRAY[32, 32], 7, FALSE, 'Un titre de transport vous est demandé.', 9),
+    (13, 'Aéroport', ST_SetSRID(ST_Point(101.549377, 3.122519), 4326), 'Vous mourrez dans le crash de la Malaysia Airline du 8 mars 2014. (Succès : Comme un avion sans elle)', 'assets/sprite/airport.png', ARRAY[32, 32], 7, FALSE, 'Un titre de transport vous est demandé.', 9),
     (14, 'Épave du Wilhelm Gustloff', ST_SetSRID(ST_Point(17.385864, 55.103418), 4326), 'Vous plongez et trouvez le coffre de la vie éternelle fermé.', 'assets/sprite/shipwreck.png', ARRAY[32, 32], 6, FALSE, 'RDV au centre de la pyramide', 8);
 
 
