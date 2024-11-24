@@ -8,7 +8,8 @@ Vue.createApp({
             heatmap: null,
             timer: null,
             tempsRestant: 600,
-            score: 0
+            score: 0,
+            pseudo: ''
         };
     },
     created() {
@@ -20,6 +21,7 @@ Vue.createApp({
         this.$nextTick(() => {
             this.initMap() // Initialisation de la carte
         });
+        this.pseudo = localStorage.getItem("pseudo");
     },
     methods: {
         // Démarrage d'un minuteur de 10min pour calcul du score
@@ -228,6 +230,36 @@ Vue.createApp({
             setTimeout(() => {
                 window.location.href = "/accueil"; 
             }, 5000);
-        }
+
+            this.addScore();
+        },
+
+        // Pour ajouter le pseudo dans la bdd //
+        addScore() {
+            const data = {
+              pseudo: this.pseudo,
+              score: this.score
+            };
+      
+            fetch('/addscore', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data) 
+            })
+            .then(result => result.json())
+
+            .then(result => {
+                if (result.success) {
+                    console.log('Score enregistré avec succès:', result.message);
+                } else {
+                    console.error('Erreur serveur:', result.error);
+                }
+            })
+            .catch(error => {
+              console.error('Erreur lors de la sauvegarde du score', error);
+            });
+          },
     }
 }).mount('#appmap');
