@@ -92,13 +92,19 @@ Vue.createApp({
                 
                 const marqueur = L.marker([objet.y, objet.x], { icon });
 
-                marqueur.bindPopup(`<strong>${objet.nom}</strong><br>${objet.description}`);
                 this.marqueurs.push({m : marqueur, objet, zoom : objet.minzoomvisible});
 
+                //Liaison du popup avec le marqueur
+                if (objet.id >= 12 && objet.id <= 14){
+                    // ObjetBloque, on affiche l'indice
+                    this.affichagePopup(objet, objet.indice);
+                }else{
+                    this.affichagePopup(objet, objet.description);
+                }
                 marqueur.addTo(this.carte);
 
                 marqueur.on('click', () => {  
-                    this.departJeu(objet);
+                    this.derouleJeu(objet);
                 });
 
                 marqueur.on('mouseover',() => {   
@@ -107,6 +113,13 @@ Vue.createApp({
                 
             };
         },
+
+        affichagePopup(objet, msg){
+            const marqueur = this.marqueurs.find(
+                ({ objet: mObjet }) => mObjet.id === objet.id);
+            marqueur.m.bindPopup(`<strong>${objet.nom}</strong><br>${msg}`);
+        },
+
 
         updateMarkersVisibility() {
             const zoomLevel = this.carte.getZoom();
@@ -119,7 +132,7 @@ Vue.createApp({
             })
         },
 
-        departJeu(objet) {
+        derouleJeu(objet) {
             // Regarde si c'est un objet de départ
             let id = objet.id
             if (objet.depart === "t" && id >= 8 && id <= 10){
@@ -135,18 +148,34 @@ Vue.createApp({
                 }
                 if (id === '10') {
                     // Chargement Fukushima + Tchernobyl
-                    this.chargerObj(5);
-                    this.chargerObj(6);
+                    this.chargerObj(4);
+                    this.chargerObj(12);
                 }else if (id === '9') {
                     // Chargement de l'aéroport
-                    this.chargerObj(1);
+                    this.chargerObj(13);
                 }else if (id === '8'){
-                    // Chargement WTC
-                    this.chargerObj(7);
+                    // Chargement Statue Liberté
+                    this.chargerObj(1);
                 }
 
+            }if (id == '13'){
+                if ((this.inventaire[0].selectionne)){
+                    // Clic avec le billet d'avion
+                    this.finJeu(false, objet.description)
+                }
             }
 
+        },
+
+        finJeu(vict, msg) {
+            if (vict == true) {
+                alert("Félicitations ! Vous vous êtes échappé à temps !");
+            } else {
+                alert("Vous avez perdu ! " + msg);
+            }
+            setTimeout(() => {
+                window.location.href = "/accueil"; 
+            }, 5000);
         }
     }
 }).mount('#appmap');

@@ -54,7 +54,10 @@ Flight::route('/api/objets', function(){
   if(isset($_GET['id_objet']) AND !(empty($_GET['id_objet']))){
     # Recherche d'un objet avec un identifiant spécifique
     $choix_objet = $_GET['id_objet'];
-    $result = pg_query($lien, "SELECT id, nom, ST_X(point) AS x, ST_Y(point) AS y, description, url_icone, taille_icone, minZoomVisible, depart FROM objet WHERE id = '$choix_objet'");
+    $result = pg_query($lien, "SELECT objet.id, objet.nom, ST_X(objet.point) AS x, ST_Y(objet.point) AS y, objet.description, objet.url_icone, objet.taille_icone, objet.minZoomVisible, objet.depart, indice, idBloque 
+    FROM objet 
+    LEFT JOIN ObjetBloqueParObjet ON objet.id = ObjetBloqueParObjet.id
+    WHERE objet.id = '$choix_objet'");
     array_push($tab_obj, pg_fetch_assoc($result));
 
   } else {
