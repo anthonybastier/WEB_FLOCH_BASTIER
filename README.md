@@ -16,6 +16,8 @@
 - Inscrire votre pseudo dans la case prévue à cet effet
 - Appuyer sur le bouton 'Jouer à Escape Death'
 - Choisir un des 3 objets initiaux et suivre les indications
+- Zoomer et dézoomer avec la molette de la souris ou les boutons + et - prévus à cet effet à gauche de l'écran
+- Se déplacer comme sur une carte interactive normale
 
 * Que faire si je n'arrive pas à sélectionner un objet ?
 - Dézoomer pour remettre l'objet à sa place initiale
@@ -26,6 +28,10 @@
 - Vous disposez de 10 minutes pour terminer le jeu, au-delà desquelles vous aurez perdu et obtiendrez 0 point.
 - Si vous mourrez, votre score sera de 0.
 - Si vous terminez victorieux, votre score sera égal au nombre de secondes qu'il restait à votre compteur lorsque vous avez cliqué sur l'objet final.
+
+* Comment tricher ?
+- Il existe une case à cocher en haut à gauche de l'écran pour activer une heatmap
+- Sinon, toutes les solutions et morts sont décrites dans le fichier soluce.txt
 
 * Informations importantes :
 - Lorsque survient la fin de jeu, un message pop-up s'affiche vous indiquant votre score.
