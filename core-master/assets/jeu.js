@@ -218,9 +218,18 @@ Vue.createApp({
             // Etape 3
             if (id == '14'){
                 // Clic sur le Wilhelm Gustloff
+                this.chargerObj(2) // Louvre
+                this.chargerObj(3) // Khéops
                 txt = objet.description
                 txt += "<br> <strong> Indice : </strong>" + objet.indice
                 this.affichagePopup(objet, txt)
+            }
+            if (id == '7'){
+                // Clic sur le Titanic
+                this.chargerObj(5) // WTC
+                txt = objet.description
+                txt += "<br> <strong> Indice : </strong> Rendez-vous en haut d'une tour de NYC."
+                this.affichagePopup(objet, objet.description)
             }
         },
 
