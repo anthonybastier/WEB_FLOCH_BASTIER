@@ -120,12 +120,15 @@ Vue.createApp({
                 this.marqueurs.push({m : marqueur, objet, zoom : objet.minzoomvisible});
 
                 //Liaison du popup avec le marqueur
+                let msg = ""
                 if (objet.id >= 12 && objet.id <= 14){
                     // ObjetBloque, on affiche l'indice
-                    this.affichagePopup(objet, objet.indice);
-                }else{
-                    this.affichagePopup(objet, objet.description);
+                    msg = objet.indice
+                } else if (objet.id >= 8){
+                    msg = objet.description
                 }
+                this.affichagePopup(objet, msg);
+
                 marqueur.addTo(this.carte);
 
                 marqueur.on('click', () => {  
@@ -161,8 +164,8 @@ Vue.createApp({
             if (!this.timer) {
                 this.demarrerMinuteur(); // Démarrer le minuteur au début du jeu
             }
-            // Regarde si c'est un objet de départ
             let id = objet.id
+            // Regarde si c'est un objet de départ
             if (objet.depart === "t" && id >= 8 && id <= 10){
                 this.inventaire.push({...objet, selectionne: false}); 
                 // Suppression des objets de départ
@@ -186,11 +189,16 @@ Vue.createApp({
                     this.chargerObj(1);
                 }
 
-            }if (id == '13'){
+            }
+            if (id == '13'){
                 if ((this.inventaire[0].selectionne)){
                     // Clic avec le billet d'avion
                     this.finJeu(false, objet.description)
                 }
+            }
+            if (id== '4'){
+                // Clic sur Fukushima
+                this.finJeu(false, objet.description)
             }
 
         },
