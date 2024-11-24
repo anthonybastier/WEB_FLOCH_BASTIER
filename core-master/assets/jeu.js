@@ -57,6 +57,7 @@ Vue.createApp({
                 maxZoom: 22
             }).addTo(this.carte);
 
+            //Initialisation de la carte de chaleur pour tricher
             this.heatmap = L.tileLayer.wms('http://localhost:8080/geoserver/wms', {
                 layers : 'BastierAnthony:objet' ,
                 format : 'image/png',
@@ -86,10 +87,10 @@ Vue.createApp({
                 const icon = L.icon({
                     iconUrl: objet.url_icone,
                     iconSize: [taille_icone[0],taille_icone[1]],
-                    iconAnchor: [objet.x, objet.y],
+                    iconAnchor: [objet.y, objet.x],
                 });
                 
-                const marqueur = L.marker([objet.x, objet.y], { icon });
+                const marqueur = L.marker([objet.y, objet.x], { icon });
 
                 marqueur.bindPopup(`<strong>${objet.nom}</strong><br>${objet.description}`);
                 this.marqueurs.push({m : marqueur, objet, zoom : objet.minzoomvisible});
@@ -121,27 +122,25 @@ Vue.createApp({
         departJeu(objet) {
             // Regarde si c'est un objet de départ
             let id = objet.id
-            if (objet.depart === "t" && id >= 12 && id <= 14){
+            if (objet.depart === "t" && id >= 8 && id <= 10){
                 this.inventaire.push({...objet, selectionne: false}); 
                 // Suppression des objets de départ
                 for (let i = this.marqueurs.length - 1; i >= 0; i--) {
                     const { m, objet: mObjet } = this.marqueurs[i];
-                    //let m = this.marqueurs[i].m
-                    //let obj = m.objet
                     
-                    if (mObjet.id >= 12 && mObjet.id <= 14) {
+                    if (mObjet.id >= 8 && mObjet.id <= 10) {
                         m.removeFrom(this.carte); // Supprime le marqueur de la carte
                         this.marqueurs.splice(i, 1); // Supprime le marqueur de la liste
                     }
                 }
-                if (id === '14') {
+                if (id === '10') {
                     // Chargement Fukushima + Tchernobyl
                     this.chargerObj(5);
                     this.chargerObj(6);
-                }else if (id === '13') {
+                }else if (id === '9') {
                     // Chargement de l'aéroport
                     this.chargerObj(1);
-                }else if (id === '12'){
+                }else if (id === '8'){
                     // Chargement WTC
                     this.chargerObj(7);
                 }
