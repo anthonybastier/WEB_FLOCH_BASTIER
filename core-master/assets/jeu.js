@@ -6,6 +6,9 @@ Vue.createApp({
             carte: null, 
             marqueurs: [],
             heatmap: null,
+            timer: null,
+            tempsRestant: 600,
+            score: 0
         };
     },
     created() {
@@ -19,6 +22,28 @@ Vue.createApp({
         });
     },
     methods: {
+        // Démarrage d'un minuteur de 10min pour calcul du score
+        demarrerMinuteur() {
+            this.tempsRestant = 600; 
+            const timeDisplay = document.getElementById('time-display');
+        
+            this.timer = setInterval(() => {
+                if (this.tempsRestant > 0) {
+                    this.tempsRestant--;
+        
+                    // Convertir le temps restant en minutes et secondes
+                    const minutes = Math.floor(this.tempsRestant / 60);
+                    const seconds = this.tempsRestant % 60;
+        
+                    // Maj affichage minuetur
+                    timeDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                } else {
+                    clearInterval(this.timer);
+                    this.finJeu(false); 
+                }
+            }, 1000);
+        },
+
         // Méthode pour charger les objets depuis l'API
         chargerObj(id = null) {
             let url = '/api/objets';
@@ -133,6 +158,9 @@ Vue.createApp({
         },
 
         derouleJeu(objet) {
+            if (!this.timer) {
+                this.demarrerMinuteur(); // Démarrer le minuteur au début du jeu
+            }
             // Regarde si c'est un objet de départ
             let id = objet.id
             if (objet.depart === "t" && id >= 8 && id <= 10){
@@ -168,10 +196,13 @@ Vue.createApp({
         },
 
         finJeu(vict, msg) {
+            clearInterval(this.timer);
             if (vict == true) {
-                alert("Félicitations ! Vous vous êtes échappé à temps !");
+                this.score = this.tempsRestant;
+                alert("Félicitations ! Vous vous êtes échappé à temps ! Votre score est : ${this.score} points.` ");
             } else {
-                alert("Vous avez perdu ! " + msg);
+                this.score = 0;
+                alert("Vous avez perdu, votre score est de 0. " + msg);
             }
             setTimeout(() => {
                 window.location.href = "/accueil"; 
