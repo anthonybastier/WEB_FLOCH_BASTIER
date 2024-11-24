@@ -43,6 +43,7 @@
         </footer>
         
         <script src="assets/accueil.js"></script>
+        <script src="assets/hall_of_fame.js"></script>
     </body>
 
 </html>
