@@ -121,9 +121,9 @@ Vue.createApp({
 
                 //Liaison du popup avec le marqueur
                 let msg = ""
-                if (objet.id >= 12 && objet.id <= 14){
+                if (objet.id >= 13 && objet.id <= 14){
                     // ObjetBloque, on affiche l'indice
-                    msg = objet.indice
+                    msg = "Indice : " + objet.indice
                 } else if (objet.id >= 8){
                     msg = objet.description
                 }
@@ -178,20 +178,19 @@ Vue.createApp({
                     }
                 }
                 if (id === '10') {
-                    // Chargement Fukushima + Tchernobyl
-                    this.chargerObj(4);
-                    this.chargerObj(12);
+                    this.chargerObj(4); // Fukushima
+                    this.chargerObj(12); // Tchernobyl
                 }else if (id === '9') {
-                    // Chargement de l'aéroport
-                    this.chargerObj(13);
+                    this.chargerObj(13); // Aeroport Kuala Lumpur
                 }else if (id === '8'){
-                    // Chargement Statue Liberté
-                    this.chargerObj(1);
+                    this.chargerObj(1); // Statue Liberté
                 }
 
             }
+            // Etape 2
             if (id == '13'){
-                if ((this.inventaire[0].selectionne)){
+                // Clic sur Kuala Lumpur
+                if ((this.inventaire[0].selectionne)){ 
                     // Clic avec le billet d'avion
                     this.finJeu(false, objet.description)
                 }
@@ -200,12 +199,21 @@ Vue.createApp({
                 // Clic sur Fukushima
                 this.finJeu(false, objet.description)
             }
+            if (id == '12'){
+                // Clic sur Tchernobyl
+                this.chargerObj(6) // Vésuve
+                this.chargerObj(11) // Volcan Tambora
+                txt = objet.description
+                txt += "<br> <strong> Indice : </strong>" + objet.indice
+                this.affichagePopup(objet, txt)
+            }
             if (id == '1'){
-                // Chargement des deux naufrages
-                this.chargerObj('7')
-                this.chargerObj('14')
+                // Clic sur la Statue de la Liberté
+                this.chargerObj(7) // Titanic
+                this.chargerObj(14) // Épave du Wilhelm Gustloff
                 this.affichagePopup(objet, objet.description)
             }
+            // Etape 3
         },
 
         finJeu(vict, msg) {
