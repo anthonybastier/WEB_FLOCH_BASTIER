@@ -122,11 +122,11 @@ Vue.createApp({
                 this.marqueurs.push({m : marqueur, objet, zoom : objet.minzoomvisible});
 
                 //Liaison du popup avec le marqueur
-                let msg = ""
-                if (objet.id >= 13 && objet.id <= 14){
+                let msg = "Se rendre ici ?"
+                if (objet.id == 13){
                     // ObjetBloque, on affiche l'indice
-                    msg = "Indice : " + objet.indice
-                } else if (objet.id >= 8){
+                    msg = "<br> <strong> Indice : </strong>" + objet.indice
+                } else if (objet.id >= 8 && objet.id <= 12){
                     msg = objet.description
                 }
                 this.affichagePopup(objet, msg);
@@ -216,6 +216,12 @@ Vue.createApp({
                 this.affichagePopup(objet, objet.description)
             }
             // Etape 3
+            if (id == '14'){
+                // Clic sur le Wilhelm Gustloff
+                txt = objet.description
+                txt += "<br> <strong> Indice : </strong>" + objet.indice
+                this.affichagePopup(objet, txt)
+            }
         },
 
         finJeu(vict, msg) {
