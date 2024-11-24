@@ -229,7 +229,7 @@ Vue.createApp({
                 this.chargerObj(5) // WTC
                 txt = objet.description
                 txt += "<br> <strong> Indice : </strong> Rendez-vous en haut d'une tour de NYC."
-                this.affichagePopup(objet, objet.description)
+                this.affichagePopup(objet, txt)
             }
         },
 
