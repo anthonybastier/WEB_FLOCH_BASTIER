@@ -196,11 +196,16 @@ Vue.createApp({
                     this.finJeu(false, objet.description)
                 }
             }
-            if (id== '4'){
+            if (id == '4'){
                 // Clic sur Fukushima
                 this.finJeu(false, objet.description)
             }
-
+            if (id == '1'){
+                // Chargement des deux naufrages
+                this.chargerObj('7')
+                this.chargerObj('14')
+                this.affichagePopup(objet, objet.description)
+            }
         },
 
         finJeu(vict, msg) {
