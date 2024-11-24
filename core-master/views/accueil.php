@@ -25,13 +25,7 @@
                         <th>Date</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr v-for="joueur in joueurs" :key="joueur.pseudo">
-                        <td>{{joueur.pseudo}}</td>
-                        <td>{{joueur.score}}</td>
-                        <td>{{joueur.date}}</td>
-                    </tr>
-                </tbody>
+                <tbody></tbody>
             </table>
         </div>
 
