@@ -108,7 +108,16 @@ Flight::route('POST /addscore', function() {
     }
 });
 
+// Afficher les 10 high scores dans le hall of fame //
 
+Flight::route('GET /joueurs', function() {
+	$link = Flight::get('db');
+  $query = "SELECT nom, score, date FROM joueurs ORDER BY score DESC LIMIT 10";
+  $result = pg_query($link, $query);
+
+  $joueurs = pg_fetch_all($result);
+  echo json_encode($joueurs);
+});
 
 Flight::start();
 ?>
