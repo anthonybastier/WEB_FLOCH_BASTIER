@@ -1,0 +1,52 @@
+Pour la victoire :
+
+*Solution 1 (rapide): 
+- Prendre le pistolet
+- Cliquer sur la Statue de la Liberté à New York
+- Cliquer sur l'épave du Wilhelm Gustloff avec le pistolet (au Nord de la Pologne)
+
+*Solution 1 (en utilisant les indices): 
+- Prendre le pistolet
+- Cliquer sur la Statue de la Liberté à New York
+- Cliquer sur l'épave du Wilhelm Gustloff (au Nord de la Pologne)
+- Cliquer sur la pyramide de Khéops (zoomer vers Le Caire) qui vous indique de simplement utiliser le pistolet
+- Cliquer à nouveau sur l'épave du Wilhelm Gustloff avec le pistolet
+
+*Solution 2 (rapide)
+- Prendre la boîte de mouchoirs
+- Cliquer sur la centrale nucléaire de Pripiat (au Nord de l'Ukraine) et entrer le code 0000
+
+*Solution 2 (en utilisant les indices)
+- Prendre la boîte de mouchoirs
+- Cliquer sur la centrale nucléaire de Pripiat (au Nord de l'Ukraine)
+- Cliquer sur le volcan Tambora (au Sud de l'Indonésie) qui vous indique que le code était 0000
+- Cliquer à nouveau sur la centrale de Pripiat et inscrire le code 0000
+
+Pour les défaites :
+
+*Mort 1 :
+- Prendre le billet d'avion
+- Cliquer sur l'aéroport de Kuala Lumpur avec le billet d'avion
+
+*Mort 2 :
+- Prendre la boîte de mouchoirs
+- Cliquer sur la centrale nucléaire de Fukushima à l'Est du Japon
+
+*Mort 3 :
+- Prendre la boîte de mouchoirs
+- Cliquer sur la centrale nucléaire de Pripiat (au Nord de l'Ukraine)
+- Cliquer sur le volcan du Vésuve au Sud-Ouest de l'Italie
+
+*Mort 4 :
+- Prendre le pistolet
+- Cliquer sur la Statue de la Liberté à New York
+- Cliquer sur l'épave du Titanic (dans l'océan loin à l'Est de New York)
+- Cliquer sur les tours jumelles à New York
+
+*Mort 5 :
+- Prendre le pistolet
+- Cliquer sur la Statue de la Liberté à New York
+- Cliquer sur l'épave du Wilhelm Gustloff (au Nord de la Pologne)
+- Cliquer sur la pyramide du Louvre
+
+

@@ -39,3 +39,8 @@ tbody {
 .img.right {
     margin-left: 10px;
 }
+
+th, td, tr, thead {
+    border: 1px solid #000000;
+    padding: 10px;
+}

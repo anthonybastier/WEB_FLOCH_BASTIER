@@ -18,6 +18,7 @@
                     <h1>Escape Death</h1>
                 <img src="assets/sprite/death.png" class="img right">
             </div>
+            <p>Bienvenue dans Escape Death, le jeu qui souhaite votre mort. Dans sa grande générosité, celui-ci vous offre l'opportunité de vous en sortir en proposant 3 objets initiaux. Choisirez-vous le pistolet pour vous protéger, le billet d'avion pour vous échapper ou le mouchoir pour sécher vos larmes ?</p>
             <h2>Hall of fame</h2>
         </header>
         <div id="hall_of_fame">
