@@ -13,7 +13,7 @@ Vue.createApp({
         };
     },
     created() {
-        // Charger les objets dès la création du composant
+        // Charger les objets dès la création de la Vue
         this.chargerObj();
     },
     mounted() {
@@ -160,7 +160,6 @@ Vue.createApp({
 
         updateMarkersVisibility() {
             const zoomLevel = this.carte.getZoom();
-            console.log(zoomLevel)
             this.marqueurs.forEach(({ m, zoom }) => {
                 if (zoom <= zoomLevel) {
                     m.addTo(this.carte);
@@ -252,8 +251,7 @@ Vue.createApp({
             if (id == '14'){
                 // Clic sur le Wilhelm Gustloff
                 if ((this.inventaire[0].selectionne)){
-                    const txt = 
-                    this.finJeu(true, txt)
+                    this.finJeu(true, objet.description)
                 }
                 this.chargerObj(2) // Louvre
                 this.chargerObj(3) // Khéops
@@ -295,7 +293,8 @@ Vue.createApp({
 
         finJeu(vict, msg) {
             // Prise en compte des retours à la ligne
-            const msgPopup = msg.replace(/<br>/g, '\n');
+            const msgcorr = msg.replace(/''/g, "'");
+            const msgPopup = msgcorr.replace(/<br>/g, '\n');
             clearInterval(this.timer);
             if (vict == true) {
                 this.score = this.tempsRestant;
