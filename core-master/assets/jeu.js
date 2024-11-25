@@ -17,9 +17,9 @@ Vue.createApp({
         this.chargerObj();
     },
     mounted() {
-        // Initialiser la carte et ajouter les marqueurs une fois la carte chargée
+        // Initialisation de la carte après la récupération des objets de départ
         this.$nextTick(() => {
-            this.initMap() // Initialisation de la carte
+            this.initMap() 
         });
         this.pseudo = localStorage.getItem("pseudo");
     },
@@ -46,7 +46,7 @@ Vue.createApp({
             }, 1000);
         },
 
-        // Méthode pour charger les objets depuis l'API
+
         chargerObj(id = null) {
             let url = '/api/objets';
             if (id) {
@@ -61,7 +61,6 @@ Vue.createApp({
             })
                 .then(result => result.json())
                 .then(result => {
-                    // Transformation de la liste de dict en liste de listes
                     this.tab_obj = result
                     this.ajoutMarqueurs();
                 });
@@ -83,7 +82,7 @@ Vue.createApp({
                     [-90, -180],
                     [90, 180]
                 ],
-                maxBoundsViscosity: 1.0
+                maxBoundsViscosity: 1.0 // Gestion des bords
             }).setView([-25.804837, 133.813477], 6);
 
             L.tileLayer('https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=e9da8ed0987a4ccdb4bb1710f21e0ee6', {
@@ -100,22 +99,20 @@ Vue.createApp({
                 transparent : true
             })
 
-            this.carte.on('zoomend', this.updateMarkersVisibility);
+            this.carte.on('zoomend', this.majMarqueurs);
         },
 
         activerTriche(){
-            
             if (this.carte.hasLayer(this.heatmap)) {
                 this.heatmap.removeFrom(this.carte);
             }else{
                 this.heatmap.addTo(this.carte)
-
             }
         },
 
         ajoutMarqueurs() {
             for (let objet of this.tab_obj) { 
-                // Configuration de la taille de l'icône dans un format lisible par Javascript
+                // Configuration de la taille de l'icône dans un format lisible par JS
                 taille_icone = objet.taille_icone.match(/[\w.-]+/g).map(Number);
 
                 const icon = L.icon({
@@ -128,8 +125,9 @@ Vue.createApp({
 
                 this.marqueurs.push({m : marqueur, objet, zoom : objet.minzoomvisible});
 
-                //Liaison du popup avec le marqueur
+                // Liaison du popup avec le marqueur
                 let msg = "Se rendre ici ?"
+                // Cas particuliers
                 if (objet.id >= 8 && objet.id <= 12 || objet.id == 15){
                     msg = objet.description
                 }
@@ -155,7 +153,7 @@ Vue.createApp({
         },
 
 
-        updateMarkersVisibility() {
+        majMarqueurs() {
             const zoomLevel = this.carte.getZoom();
             this.marqueurs.forEach(({ m, zoom }) => {
                 if (zoom <= zoomLevel) {
@@ -174,7 +172,7 @@ Vue.createApp({
             // Regarde si c'est un objet de départ
             if (objet.depart === "t" && id >= 8 && id <= 10){
                 this.inventaire.push({...objet, selectionne: false}); 
-                // Suppression des objets de départ
+                // Suppression des objets de départ de la carte
                 for (let i = this.marqueurs.length - 1; i >= 0; i--) {
                     const { m, objet: mObjet } = this.marqueurs[i];
                     
@@ -228,7 +226,7 @@ Vue.createApp({
                     const ouverture = document.getElementById('ouvrir');
                     if (ouverture) {
                         ouverture.addEventListener('click', () => {
-                            // Selection de tous les nombres
+                            // Selection de tous les chiffres
                             const nombres = Array.from(document.querySelectorAll('.code'));
                             const codeSaisi = nombres.map(input => input.value).join('');
                             if (codeSaisi === '0000') {
@@ -335,7 +333,7 @@ Vue.createApp({
             })
             .catch(error => {
               console.error('Erreur lors de la sauvegarde du score', error);
-            });
-          },
+            });
+        },
     }
 }).mount('#appmap');
