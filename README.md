@@ -10,8 +10,8 @@
 
 * Comment démarrer le jeu ?
 - Installer MAMP et allumer le serveur Apache
-- Installer GeoServer ??
-- Importer la Base de données BDD.?? dans pgAdmin 4
+- Installer GeoServer, copier
+- Importer les 5 fichiers .sql dans pgAdmin 4
 - Ouvrir un onglet de page internet avec écrit 'localhost'
 - Inscrire votre pseudo dans la case prévue à cet effet
 - Appuyer sur le bouton 'Jouer à Escape Death'
@@ -40,4 +40,5 @@
 
 * Versions :
 php 7.4.16
-GeoServer ??
+PgSQL 16 ou 17
+MAMP 5.0.6

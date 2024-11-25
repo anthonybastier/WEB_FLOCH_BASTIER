@@ -19,7 +19,7 @@ Pour la victoire :
 *Solution 2 (en utilisant les indices)
 - Prendre la boîte de mouchoirs
 - Cliquer sur la centrale nucléaire de Pripiat (au Nord de l'Ukraine)
-- Cliquer sur le volcan Tambora (au Sud de l'Indonésie) qui vous indique que le code était 0000
+- Cliquer sur le volcan Tambora (au Sud de l'Indonésie), le code apparaît (0000)
 - Cliquer à nouveau sur la centrale de Pripiat et inscrire le code 0000
 
 Pour les défaites :
