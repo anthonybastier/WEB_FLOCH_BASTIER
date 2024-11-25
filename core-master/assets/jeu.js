@@ -77,11 +77,20 @@ Vue.createApp({
         },
 
         initMap() {
-            this.carte = L.map('map').setView([-25.804837, 133.813477], 6);
+            this.carte = L.map('map', {
+                minZoom: 2,
+                maxBounds: [
+                    [-90, -180],
+                    [90, 180]
+                ],
+                maxBoundsViscosity: 1.0
+            }).setView([-25.804837, 133.813477], 6);
 
             L.tileLayer('https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=e9da8ed0987a4ccdb4bb1710f21e0ee6', {
                 attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                maxZoom: 22
+                maxZoom: 22,
+                noWrap: true,
+                bounds: [[-90, -180], [90, 180]] 
             }).addTo(this.carte);
 
             //Initialisation de la carte de chaleur pour tricher
@@ -151,6 +160,7 @@ Vue.createApp({
 
         updateMarkersVisibility() {
             const zoomLevel = this.carte.getZoom();
+            console.log(zoomLevel)
             this.marqueurs.forEach(({ m, zoom }) => {
                 if (zoom <= zoomLevel) {
                     m.addTo(this.carte);
