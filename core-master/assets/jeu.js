@@ -130,10 +130,7 @@ Vue.createApp({
 
                 //Liaison du popup avec le marqueur
                 let msg = "Se rendre ici ?"
-                if (objet.id >= 13 && objet.id <=14){
-                    // ObjetBloque, on affiche l'indice
-                    msg = "<br> <strong> Indice : </strong>" + objet.indice
-                } else if (objet.id >= 8 && objet.id <= 12 || objet.id == 15){
+                if (objet.id >= 8 && objet.id <= 12 || objet.id == 15){
                     msg = objet.description
                 }
                 this.affichagePopup(objet, msg);
@@ -202,6 +199,9 @@ Vue.createApp({
                 if ((this.inventaire[0].selectionne)){ 
                     // Clic avec le billet d'avion
                     this.finJeu(false, objet.description)
+                }else{
+                    txt = "<br> <strong> Indice : </strong>" + objet.indice
+                    this.affichagePopup(objet, txt)
                 }
             }
             if (id == '4'){
@@ -255,8 +255,7 @@ Vue.createApp({
                 }
                 this.chargerObj(2) // Louvre
                 this.chargerObj(3) // Khéops
-                txt = objet.description
-                txt += "<br> <strong> Indice : </strong>" + objet.indice
+                txt = "<br> <strong> Indice : </strong>" + objet.indice
                 this.affichagePopup(objet, txt)
             }
             if (id == '7'){
@@ -287,7 +286,8 @@ Vue.createApp({
             }
             if (id == '3'){
                 // Clic sur Khéops
-                this.affichagePopup(objet, objet.description)
+                txt = objet.description
+                this.affichagePopup(objet, txt)
             }
         },
 
