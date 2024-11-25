@@ -298,10 +298,10 @@ Vue.createApp({
             clearInterval(this.timer);
             if (vict == true) {
                 this.score = this.tempsRestant;
-                alert(`Félicitations ! Vous vous êtes échappé à temps ! Votre score est : ${this.score} points.` + msgPopup);
+                alert(`Félicitations ! Vous vous êtes échappé à temps ! Votre score est : ${this.score} points. ` + msgPopup);
             } else {
                 this.score = 0;
-                alert("Vous avez perdu, votre score est de 0." + msgPopup);
+                alert("Vous avez perdu, votre score est de 0. " + msgPopup);
             }
             setTimeout(() => {
                 window.location.href = "/accueil"; 

@@ -24,7 +24,7 @@
                 <ul>
                     <li v-for="objet in inventaire" :key="objet.id" :class="{ selectionne: objet.selectionne }" @click="selectionnerObjet(objet)">
                         <img :src="objet.url_icone" :alt="objet.nom" style="width: 50px; height: auto;" />
-                        <span> {{ objet.nom }}</span>
+                        <span style="font-weight: bold;">  {{ objet.nom }}</span>
                     </li>
                 </ul>
             </div>
