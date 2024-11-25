@@ -8,7 +8,10 @@ h1 { height: 8%;
     margin: 0}
 
 #appmap { height: 76%;
-    width: 100%; }
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px); }
 
 #map { height: 100%;
     width: 100%; }

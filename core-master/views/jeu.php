@@ -19,7 +19,7 @@
         <div id="appmap">
         <label>Triche ?<input type="checkbox" @click="activerTriche" ></label>
             <div id="map"></div>
-            <footer id="inventaire">
+            <div id="inventaire">
                 <h3>Inventaire</h3>
                 <ul>
                     <li v-for="objet in inventaire" :key="objet.id" :class="{ selectionne: objet.selectionne }" @click="selectionnerObjet(objet)">
@@ -27,8 +27,13 @@
                         <span> {{ objet.nom }}</span>
                     </li>
                 </ul>
-            </footer>
+            </div>
         </div>
+
+        <footer id="credits" style="text-align: center; margin-top: 20px;">
+            <p>&copy; 2024 Escape Death - Développé par Anaïs Floch et Anthony Bastier - Tous droits réservés.</p>
+        </footer>
+
         <script src="assets/jeu.js"></script>
     </body>
 

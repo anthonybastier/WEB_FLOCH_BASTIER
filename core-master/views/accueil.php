@@ -42,6 +42,9 @@
 
             </form>
         </div>
+        <footer id="crdits" style="text-align: center; margin-top: 20px;">
+            <p>&copy; 2024 Escape Death - Développé par Anaïs Floch et Anthony Bastier - Tous droits réservés.</p>
+        </footer>
 
         <script src="assets/accueil.js"></script>
         <script src="assets/hall_of_fame.js"></script>
