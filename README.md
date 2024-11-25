@@ -3,7 +3,7 @@
 # Mode d'emploi du GIT WEB_FLOCH_BASTIER
 
 * Présentation
-- Bienvenue dans Escape Death, le jeu qui souhaite votre mort. Avec l'aide d'un objet initial, vous pourrez tenter de vous en sortir en vie… Ou d'expérimenter l'une des morts les plus connues de l'humanité !
+- Bienvenue dans Escape Death, le jeu qui souhaite votre mort. Vous vous réveillez dans l'endroit le plus dangereux du monde : l'Australie ! Avec l'aide d'un objet initial, vous pourrez tenter de vous en sortir en vie… Ou d'expérimenter l'une des morts les plus connues de l'humanité !
 
 * TRIGGER WARNING :
 - Ce jeu utilise des morts célèbres et historiques qui pourraient choquer des personnes liées à ces accidents de près ou de loin, il est donc conseillé de ne pas jouer aux personnes trop sensibles.
@@ -34,6 +34,7 @@
 - Sinon, toutes les solutions et morts sont décrites dans le fichier soluce.txt
 
 * Informations importantes :
+- Il peut être parfois nécessaire de cliquer 2 fois sur un objet, afin d'obtenir un indice par exemple
 - Lorsque survient la fin de jeu, un message pop-up s'affiche vous indiquant votre score.
 - Après avoir cliqué sur 'OK', vous serez automatiquement redirigé vers la page d'accueil, où votre pseudo devrait apparaître dans le Hall Of Fame avec votre score et la date de la partie.
 

@@ -121,10 +121,10 @@ Vue.createApp({
 
                 //Liaison du popup avec le marqueur
                 let msg = "Se rendre ici ?"
-                if (objet.id == 13){
+                if (objet.id >= 13 && objet.id <=14){
                     // ObjetBloque, on affiche l'indice
                     msg = "<br> <strong> Indice : </strong>" + objet.indice
-                } else if (objet.id >= 8 && objet.id <= 12){
+                } else if (objet.id >= 8 && objet.id <= 12 || objet.id == 15){
                     msg = objet.description
                 }
                 this.affichagePopup(objet, msg);
@@ -223,7 +223,7 @@ Vue.createApp({
                             const nombres = Array.from(document.querySelectorAll('.code'));
                             const codeSaisi = nombres.map(input => input.value).join('');
                             if (codeSaisi === '0000') {
-                                this.finJeu(true, "Bravo ! Vous avez ouvert la boîte de Pandore ?");
+                                this.finJeu(true, " Bravo ! Vous avez ouvert la boîte de Pandore ! ");
                             } else {
                                 alert("Code incorrect. Réessayez !");
                             }
@@ -242,7 +242,7 @@ Vue.createApp({
             if (id == '14'){
                 // Clic sur le Wilhelm Gustloff
                 if ((this.inventaire[0].selectionne)){
-                    txt = "Vous tirez sur le coffre de la vie éternelle avec le pistolet. Il s'ouvre, la vie éternelle s'offre à vous !"
+                    const txt = 
                     this.finJeu(true, txt)
                 }
                 this.chargerObj(2) // Louvre
@@ -255,13 +255,12 @@ Vue.createApp({
                 // Clic sur le Titanic
                 this.chargerObj(5) // WTC
                 txt = objet.description
-                txt += "<br> <strong> Indice : </strong> Rendez-vous en haut d'une tour de NYC."
                 this.affichagePopup(objet, txt)
             }
             if (id == '11'){
                 // Clic sur le volcan Tambora
+                this.chargerObj(15)
                 txt = objet.description
-                txt += "<br> <strong> Code :</strong> " + "0000"
                 this.affichagePopup(objet, txt)
             }
             if (id == '6'){
@@ -285,13 +284,15 @@ Vue.createApp({
         },
 
         finJeu(vict, msg) {
+            // Prise en compte des retours à la ligne
+            const msgPopup = msg.replace(/<br>/g, '\n');
             clearInterval(this.timer);
             if (vict == true) {
                 this.score = this.tempsRestant;
-                alert(`Félicitations ! Vous vous êtes échappé à temps ! Votre score est : ${this.score} points.`);
+                alert("Félicitations ! Vous vous êtes échappé à temps ! Votre score est : ${this.score} points." + msgPopup);
             } else {
                 this.score = 0;
-                alert("Vous avez perdu, votre score est de 0. " + msg);
+                alert("Vous avez perdu, votre score est de 0." + msgPopup);
             }
             setTimeout(() => {
                 window.location.href = "/accueil"; 
