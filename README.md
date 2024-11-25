@@ -9,9 +9,9 @@
 - Ce jeu utilise des morts célèbres et historiques qui pourraient choquer des personnes liées à ces accidents de près ou de loin, il est donc conseillé aux personnes trop sensibles de ne pas jouer.
 
 * Comment démarrer le jeu ?
-- Installer MAMP et allumer le serveur Apache
-- Installer GeoServer, copier le fichier "BastierAnthony" dans le dossier workspaces puis lancer le geoserver
+- Installer GeoServer, copier le fichier "BastierAnthony" dans le dossier workspaces puis lancer le Geoserver
 - Installer pgAdmin 4, créer une base de données "escape_game" et importer les 5 fichiers .sql
+- Installer MAMP et allumer le serveur Apache
 - Ouvrir un onglet de page internet avec écrit 'localhost'
 - Inscrire votre pseudo dans la case prévue à cet effet
 - Appuyer sur le bouton 'Jouer à Escape Death'

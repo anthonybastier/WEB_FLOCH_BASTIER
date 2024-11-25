@@ -121,7 +121,7 @@ Vue.createApp({
                 const icon = L.icon({
                     iconUrl: objet.url_icone,
                     iconSize: [taille_icone[0],taille_icone[1]],
-                    iconAnchor: [objet.y, objet.x],
+                    iconAnchor: [taille_icone[0]/2,taille_icone[1]/2],
                 });
                 
                 const marqueur = L.marker([objet.y, objet.x], { icon });
