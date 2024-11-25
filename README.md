@@ -10,8 +10,8 @@
 
 * Comment démarrer le jeu ?
 - Installer MAMP et allumer le serveur Apache
-- Installer GeoServer, copier
-- Importer les 5 fichiers .sql dans pgAdmin 4
+- Installer GeoServer, copier le fichier "BastierAnthony" dans le dossier workspaces puis lancer le geoserver
+- Installer pgAdmin 4, créer une base de données "escape_game" et importer les 5 fichiers .sql
 - Ouvrir un onglet de page internet avec écrit 'localhost'
 - Inscrire votre pseudo dans la case prévue à cet effet
 - Appuyer sur le bouton 'Jouer à Escape Death'
@@ -39,6 +39,11 @@
 - Après avoir cliqué sur 'OK', vous serez automatiquement redirigé vers la page d'accueil, où votre pseudo devrait apparaître dans le Hall Of Fame avec votre score et la date de la partie.
 
 * Versions :
+pgAdmin 4
 php 7.4.16
 PgSQL 16 ou 17
 MAMP 5.0.6
+
+
+
+© 2024 Escape Death - Développé par Anaïs Floch et Anthony Bastier - Tous droits réservés.
