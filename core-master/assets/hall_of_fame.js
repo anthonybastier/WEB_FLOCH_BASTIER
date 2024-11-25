@@ -1,9 +1,13 @@
+// Pour que la liste de joueurs s'affiche dans le hall of fame de la page d'accueil //
+
 Vue.createApp({
     data() {
         return {
             joueurs: []
         };
     },
+
+    // Récupérer les infos des joueurs //
 
     mounted() {
         fetch('/joueurs')
@@ -15,6 +19,8 @@ Vue.createApp({
                 }
             })
     },
+
+    // Les ajouter dans différentes lignes du tableau avec chaque info au bon endroit //
 
     methods: {
         ajouterLigne(joueur) {
