@@ -91,8 +91,6 @@ Vue.createApp({
                 transparent : true
             })
 
-            L.marker([-25.804837, 133.813477]).addTo(this.carte);
-
             this.carte.on('zoomend', this.updateMarkersVisibility);
         },
 
