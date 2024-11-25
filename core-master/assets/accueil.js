@@ -7,7 +7,11 @@ Vue.createApp({
         joueurs: []
       };
     },
+
     methods: {
+
+        // Enregistrer localement le pseudo du joueur et lancer la partie //
+
         async play() {
             try {
                 const result = await fetch('/addpseudobdd', {
@@ -38,18 +42,15 @@ Vue.createApp({
             }
         }
     },
+
     computed: {
         nbrCaracRestants() {
             return (this.max - this.pseudo.length);
             },
-        limite() {
-            if (this.nbrCaracRestants >= 0) {
-                return true;
-            }else{
-                return false;
-            };
-        },
     },
+
+    // Chargement des données du hall of fame //
+
     created() {
         console.log(this.pseudo);
         fetch('/halloffame')
